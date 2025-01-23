@@ -1,7 +1,3 @@
-<!--
-Add here global page variables to use throughout your website.
--->
-+++
 author = "Kevin Bonham, PhD"
 mintoclevel = 2
 
@@ -20,5 +16,4 @@ generate_rss = true
 website_title = "Audiommunity.org"
 website_descr = "A podcast about our bodies' never-ending fight with the outside world"
 website_url   = "https://audiommunity.org"
-+++
 
