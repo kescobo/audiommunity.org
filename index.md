@@ -1,5 +1,7 @@
-@def title = "Franklin Example"
-@def tags = ["syntax", "code"]
++++
+title = "Franklin Example"
+tags = ["syntax", "code"]
++++
 
 # How to use Franklin
 
