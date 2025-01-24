@@ -1,17 +1,76 @@
+@reexport using Dates
+import Hyperscript as HS
 
-function hfun_bar(vname)
-  val = Meta.parse(vname[1])
-  return round(sqrt(val), digits=2)
+node = HS.m
+
+function hfun_page_tags()
+  tags = get_page_tags()
+  base = globvar(:tags_prefix)
+  return join(
+    (
+      node("span", class="tag",
+        node("a", href="/$base/$id/", name)
+      )
+      for (id, name) in tags
+    ),
+    node("span", class="separator", "•")
+  )
 end
 
-function hfun_m1fill(vname)
-  var = vname[1]
-  return pagevar("index", var)
-end
+# ===============================================
+# Logic to retrieve posts in episodes/ and display
+# them as a list sorted by anti-chronological
+# order.
+#
+# Assumes that 'date' and 'title' are defined for
+# all posts.
+# ===============================================
 
-function lx_baz(com)
-  # keep this first line
-  brace_content = Franklin.content(com.braces[1]) # input string
-  # do whatever you want here
-  return uppercase(brace_content)
+function hfun_list_episodes(t::String)
+  return string(
+    node("ul",
+      (
+        node("li",
+            node("span", class="date", string(Dates.format(p.date, "U d, yyyy"), " | ")),
+            node("a", class="title", href=p.href, string("Episode $(p.episode) - ", p.title))
+        )
+        for p in get_episodes(t) if !p.draft
+      )...
+    )
+  )
+end
+hfun_list_episodes() = hfun_list_episodes("")
+
+
+function get_episodes(t::String, basepath::String="episodes")
+    # find all valid "episodes/xxx.md" files, exclude the index which is where
+    # the post-list gets placed
+    paths = String[]
+    for (root, dirs, files) in walkdir(basepath)
+        filter!(p -> endswith(p, ".md") && p != "index.md", files)
+        append!(paths, joinpath.(root, files))
+    end
+    # for each of those posts, retrieve date and title, both are expected
+    # to be there
+    posts = [
+        (;
+            date    = getvarfrom(:date, rp),
+            title   = getvarfrom(:title, rp),
+            href    = "/$(splitext(rp)[1])",
+            draft   = getvarfrom(:draft, rp, false),
+            tags    = get_page_tags(rp),
+            episode = getvarfrom(:episode, rp, "X"),
+            season  = getvarfrom(:episode, rp, "Y"),
+        )
+        for rp in paths
+    ]
+    sort!(posts, by=x -> x.date, rev=true)
+    if !isempty(t)
+        filter!(posts) do p
+            t in values(p.tags) &&
+            !isnothing(p.draft) &&
+            !p.draft
+        end
+    end
+    return posts
 end
