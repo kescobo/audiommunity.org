@@ -1,9 +1,9 @@
 +++
-title = "Franklin Example"
-tags = ["syntax", "code"]
+title = "Audiommunity.org"
+tags = ["immune system", "podcast", "immunology", "academia"]
 +++
 
-![](/assets/audiommunity_banner.png)
+![](/assets/audiommunity_thumbnail.png)
 
 
 # This is Audiommunity
