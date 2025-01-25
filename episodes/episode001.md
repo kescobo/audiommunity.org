@@ -7,7 +7,7 @@ date = Date(2014, 01, 30)
 tags = ["transplants"]
 rss_descr = "An episode about transplantation and MHC"
 rss_title = title
-audio_file = "/assets/audio/episode001.mp3"
+rss_enclosure = "/assets/audio/episode001.mp3"
 
 +++
 

@@ -81,7 +81,7 @@ end
 #---
 
 function hfun_embed_audio()
-    file = getlvar(:audio_file)
+    file = getlvar(:rss_enclosure)
     return """
     <audio controls>
         <source src="$file" type="audio/mpeg">
