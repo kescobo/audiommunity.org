@@ -5,8 +5,8 @@ season = 1
 episode = 1
 date = Date(2014, 01, 30)
 tags = ["transplants"]
-rss_descr = "Mastodon comments - take 2"
-rss_title = "Setting up mastodon comments"
+rss_descr = "An episode about transplantation and MHC"
+rss_title = title
 +++
 
 Do we need some content
