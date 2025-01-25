@@ -27,7 +27,7 @@ end
 # all posts.
 # ===============================================
 
-function hfun_list_episodes(t::String)
+function hfun_list_episodes(tag::String, basepath::String="episodes")
   return string(
     node("ul",
       (
@@ -35,15 +35,16 @@ function hfun_list_episodes(t::String)
             node("span", class="date", string(Dates.format(p.date, "U d, yyyy"), " | ")),
             node("a", class="title", href=p.href, string("Episode $(p.episode) - ", p.title))
         )
-        for p in get_episodes(t) if !p.draft
+        for p in get_episodes(tag, basepath) if !p.draft
       )...
     )
   )
 end
-hfun_list_episodes() = hfun_list_episodes("")
+
+hfun_list_episodes() = hfun_list_episodes("", "episodes")
 
 
-function get_episodes(t::String, basepath::String="episodes")
+function get_episodes(tag::String, basepath::String)
     # find all valid "episodes/xxx.md" files, exclude the index which is where
     # the post-list gets placed
     paths = String[]
@@ -66,7 +67,7 @@ function get_episodes(t::String, basepath::String="episodes")
         for rp in paths
     ]
     sort!(posts, by=x -> x.date, rev=true)
-    if !isempty(t)
+    if !isempty(tag)
         filter!(posts) do p
             t in values(p.tags) &&
             !isnothing(p.draft) &&
