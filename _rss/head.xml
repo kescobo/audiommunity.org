@@ -21,16 +21,18 @@ rss_file variable in your config file if you want to use something different tha
 
   <channel>
     <title>
-      <![CDATA[  Test  ]]>
+      <!-- XXX <![CDATA[  {{fd2rss website_title}}  ]]> -->
+      <![CDATA[  Audiommunity  ]]>
     </title>
     <link> {{website_url}} </link>
     <description>
-      <![CDATA[  A description  ]]>
+      <!-- XXX <![CDATA[  {{fd2rss website_description}}  ]]> -->
+      <![CDATA[  A podcast about our bodies' never-ending fight with the outside world  ]]>
     </description>
-    <!--<atom:link
+    <!-- XXX <atom:link
       href="{{fd_rss_feed_url}}"
       rel="self"
-      type="application/rss+xml" />-->
+      type="application/rss+xml" /> -->
 <!--
 * items will be added here in chronological order
 * the channel will then be closed
