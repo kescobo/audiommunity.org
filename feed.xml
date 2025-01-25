@@ -26,5 +26,6 @@
   <atom:author>
     <atom:name>Kevin Bonham, PhD</atom:name>
   </atom:author>
+  <enclosure> /assets/audio/episode001.mp3 </enclosure>
 </item>
 </channel></rss>
