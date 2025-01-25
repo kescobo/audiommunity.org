@@ -30,7 +30,7 @@ jobs:
       # Website build
       - run: julia -e '
           using Pkg; Pkg.add(url="https://github.com/tlienart/Xranklin.jl", rev="main");
-          using Xranklin; build();'
+          using Xranklin; build(; clear=true);'
 
       # Deployment and caching
       - run: touch __site/.nojekyll
