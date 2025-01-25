@@ -9,7 +9,7 @@
     <title>
       <![CDATA[  Test  ]]>
     </title>
-    <link> https://audiommunity.org/ </link>
+    <link> http://audiommunity.org/ </link>
     <description>
       <![CDATA[  A description  ]]>
     </description>
@@ -18,8 +18,8 @@
   <title>
     <![CDATA[  Everyone else’s kidneys  ]]>
   </title>
-  <link> https://audiommunity.orgepisodes/episode001/index.html </link>
-  <guid> https://audiommunity.orgepisodes/episode001/index.html </guid>
+  <link> http://audiommunity.orgepisodes/episode001/index.html </link>
+  <guid> http://audiommunity.orgepisodes/episode001/index.html </guid>
   <description>
     <![CDATA[  This is a test of the RSS feed  ]]>
   </description>
