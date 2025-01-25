@@ -14,3 +14,6 @@ A podcast about our bodies' never-ending fight with the outside world
 - Support us [on Patreon](https://patreon.com/audiommunity)
 - Get [in touch](/about)!
 
+~~~
+<i class="fa fa-pencil" aria-hidden="true"></i>
+~~~

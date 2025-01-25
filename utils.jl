@@ -3,6 +3,7 @@ import Hyperscript as HS
 
 node = HS.m
 
+
 function hfun_page_tags()
   tags = get_page_tags()
   base = globvar(:tags_prefix)
