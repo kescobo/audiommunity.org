@@ -77,3 +77,15 @@ function get_episodes(tag::String, basepath::String)
     end
     return posts
 end
+
+#---
+
+function hfun_embed_audio()
+    file = getlvar(:audio_file)
+    return """
+    <audio controls>
+        <source src="$file" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    """
+end
