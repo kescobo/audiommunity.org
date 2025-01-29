@@ -8,8 +8,10 @@ tags = ["meta", "autoimmunity", "careers"]
 rss_descr = "Audiommunity is back! Again!"
 rss_title = title
 rss_enclosure = "/assets/audio/episode033.mp3"
-episode_length = "71548266"
+episode_length = "29307524"
 +++
+
+# {{title}}
 
 {{embed_audio}}
 
@@ -33,5 +35,5 @@ what we've been doing, and where we hope to take the podcast going forward.
   - or listen on [spotify](https://open.spotify.com/album/7D9Dz8wYVQ0I48oUHAQiin),
     [amazon](https://www.amazon.com/dp/B0DNTWWBD1/),
     or [youtube](https://www.youtube.com/playlist?list=OLAK5uy_nz7TUKXc3ruOyVmlllVRHM39xse5UqT74)
-
+  - And actually, the intro/outro music is from her 2nd album, the song is "Lucky"
 

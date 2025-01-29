@@ -82,10 +82,20 @@ end
 
 function hfun_embed_audio()
     file = getlvar(:rss_enclosure)
+    title = getlvar(:title)
     return """
+    
+    <p>
     <audio controls>
         <source src="$file" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+    </p>
     """
+end
+
+function hfun_pub_date()
+    d = getlvar(:date)
+    dt = DateTime(d, Time(10,0,0))
+    return Dates.format(dt, "e, d u yyyy HH:MM:SS -0500")
 end

@@ -11,6 +11,11 @@ rss_enclosure = "/assets/audio/episode001.mp3"
 episode_length = "71548266"
 +++
 
-Do we need some content
+# {{title}}
+
+{{pub_date}}
 
 {{embed_audio}}
+
+Do we need some content
+
