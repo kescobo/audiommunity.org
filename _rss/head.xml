@@ -39,6 +39,7 @@ rss_file variable in your config file if you want to use something different tha
     <itunes:author>Audiommunity.org</itunes:author>
 
     <!-- Add channel-level podcast tags -->
+    <podcast:guid>389e74b1-be77-567e-b7b8-98eacec29284</podcast:guid>
     <podcast:locked>no</podcast:locked>
     <podcast:funding url="https://patreon.com/audiommunity">Support the show</podcast:funding>
     <!-- <podcast:person role="host" img="http://example.com/images/host.jpg">Kevin Bonham, PhD</podcast:person> -->
