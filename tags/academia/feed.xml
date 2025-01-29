@@ -12,10 +12,12 @@
       <![CDATA[Audiommunity]]>
     </title>
     <link>http://audiommunity.org/</link>
+    <language>en</language>
+    <atom:link href="http://audiommunity.org/tags/academia/feed.xml" rel="self" type="application/rss+xml"/>
     <description>
       <![CDATA[A podcast about our bodies' never-ending fight with the outside world]]>
     </description>
-    <itunes:image href="http://audiommunity.org/assets/audiommunity_thumnail.png"/>
+    <itunes:image href="http://audiommunity.org/assets/audiommunity_cover.png"/>
     <itunes:category text="Science"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:author>Audiommunity.org</itunes:author>
