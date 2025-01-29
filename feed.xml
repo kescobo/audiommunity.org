@@ -27,6 +27,22 @@
 
 <item>
   <title>
+    <![CDATA[  Emmunity is dead. Long live Audiommunity!  ]]>
+  </title>
+    <link> http://audiommunity.org/episodes/episode033/index.html </link>
+    <guid> http://audiommunity.org/episodes/episode033/index.html </guid>
+  <description>
+    <![CDATA[  Audiommunity is back! Again!  ]]>
+  </description>
+  <atom:author>
+    <atom:name>Kevin Bonham, PhD</atom:name>
+  </atom:author>
+    <enclosure url="http://audiommunity.org/assets/audio/episode033.mp3" length="71548266" type="audio/mpeg" />
+  <itunes:duration>30:45</itunes:duration>
+</item>
+
+<item>
+  <title>
     <![CDATA[  Everyone else’s kidneys  ]]>
   </title>
     <link> http://audiommunity.org/episodes/episode001/index.html </link>

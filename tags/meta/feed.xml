@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:georss="http://www.georss.org/georss"
+  xmlns:podcast="https://podcastindex.org/namespace/1.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>
+      <![CDATA[Audiommunity]]>
+    </title>
+    <link>http://audiommunity.org/</link>
+    <language>en</language>
+    <atom:link href="http://audiommunity.org/tags/meta/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>
+      <![CDATA[A podcast about our bodies' never-ending fight with the outside world]]>
+    </description>
+    <itunes:image href="http://audiommunity.org/assets/audiommunity_cover.png"/>
+    <itunes:category text="Science"/>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:author>Audiommunity.org</itunes:author>
+    <podcast:guid>389e74b1-be77-567e-b7b8-98eacec29284</podcast:guid>
+    <podcast:locked>no</podcast:locked>
+    <podcast:funding url="https://patreon.com/audiommunity">Support the show</podcast:funding>
+
+<item>
+  <title>
+    <![CDATA[  Emmunity is dead. Long live Audiommunity!  ]]>
+  </title>
+    <link> http://audiommunity.org/episodes/episode033/index.html </link>
+    <guid> http://audiommunity.org/episodes/episode033/index.html </guid>
+  <description>
+    <![CDATA[  Audiommunity is back! Again!  ]]>
+  </description>
+  <atom:author>
+    <atom:name>Kevin Bonham, PhD</atom:name>
+  </atom:author>
+    <enclosure url="http://audiommunity.org/assets/audio/episode033.mp3" length="71548266" type="audio/mpeg" />
+  <itunes:duration>30:45</itunes:duration>
+</item>
+</channel></rss>
