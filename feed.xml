@@ -37,7 +37,7 @@
   <atom:author>
     <atom:name>Kevin Bonham, PhD</atom:name>
   </atom:author>
-  <enclosure url="http://audiommunity.org/assets/audio/episode001.mp3" length="12345" type="audio/mpeg" />
+    <enclosure url="http://audiommunity.org/assets/audio/episode001.mp3" length="71548266" type="audio/mpeg" />
   <itunes:duration>30:45</itunes:duration>
 </item>
 </channel></rss>
