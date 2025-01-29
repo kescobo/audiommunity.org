@@ -31,12 +31,11 @@
   </title>
     <link> http://audiommunity.org/episodes/episode033/index.html </link>
     <guid> episodes/episode033/index.html </guid>
-    <pubDate> Mon, 1 Jan 0001 10:00:00 -0500 </pubDate>
   <description>
     <![CDATA[  Audiommunity is back! Again!  ]]>
   </description>
   <atom:author>
-    <atom:name>Kevin Bonham, PhD</atom:name>
+    <atom:name>Audiommunity.org</atom:name>
   </atom:author>
     <enclosure url="http://audiommunity.org/assets/audio/episode033.mp3" length="29307524" type="audio/mpeg" />
 </item>
