@@ -5,15 +5,20 @@
   xmlns:media="http://search.yahoo.com/mrss/"
   xmlns:atom="http://www.w3.org/2005/Atom"
   xmlns:georss="http://www.georss.org/georss"
+  xmlns:podcast="https://podcastindex.org/namespace/1.0"
   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>
-      <![CDATA[  Audiommunity  ]]>
+      <![CDATA[Audiommunity]]>
     </title>
-    <link> http://audiommunity.org/ </link>
+    <link>http://audiommunity.org/</link>
     <description>
-      <![CDATA[  A podcast about our bodies' never-ending fight with the outside world  ]]>
+      <![CDATA[A podcast about our bodies' never-ending fight with the outside world]]>
     </description>
+    <itunes:image href="http://audiommunity.org/assets/audiommunity_thumnail.png"/>
+    <itunes:category text="Science"/>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:author>Audiommunity.org</itunes:author>
 
 <item>
   <title>
