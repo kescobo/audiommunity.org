@@ -30,7 +30,8 @@
     <![CDATA[  Everyone else’s kidneys  ]]>
   </title>
     <link> http://audiommunity.org/episodes/episode001/index.html </link>
-    <guid> http://audiommunity.org/episodes/episode001/index.html </guid>
+    <guid> episodes/episode001/index.html </guid>
+    <pubDate> Mon, 1 Jan 0001 10:00:00 -0500 </pubDate>
   <description>
     <![CDATA[  An episode about transplantation and MHC  ]]>
   </description>
@@ -38,6 +39,5 @@
     <atom:name>Kevin Bonham, PhD</atom:name>
   </atom:author>
     <enclosure url="http://audiommunity.org/assets/audio/episode001.mp3" length="71548266" type="audio/mpeg" />
-  <itunes:duration>30:45</itunes:duration>
 </item>
 </channel></rss>
