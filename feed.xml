@@ -21,6 +21,8 @@
     <itunes:category text="Science"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:author>Audiommunity.org</itunes:author>
+    <podcast:locked>no</podcast:locked>
+    <podcast:funding url="https://patreon.com/audiommunity">Support the show</podcast:funding>
 
 <item>
   <title>
