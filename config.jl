@@ -1,4 +1,4 @@
-author = "Kevin Bonham, PhD"
+author = "Audiommunity.org"
 mintoclevel = 2
 
 # uncomment and adjust the following line if the expected base URL of your website is something like [www.thebase.com/yourproject/]
@@ -16,7 +16,6 @@ website_title = "Audiommunity.org"
 website_descr = "A podcast about our bodies' never-ending fight with the outside world"
 website_url   = "http://audiommunity.org"
 
-fd_mtime = "--test--"
 
 # RSS (the website_{title, descr, url} must be defined to get RSS)
 generate_rss = true

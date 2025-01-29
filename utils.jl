@@ -82,7 +82,6 @@ end
 
 function hfun_embed_audio()
     file = getlvar(:rss_enclosure)
-    title = getlvar(:title)
     return """
     
     <p>

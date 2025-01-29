@@ -8,6 +8,7 @@ tags = ["transplants"]
 rss_descr = "An episode about transplantation and MHC"
 rss_title = title
 rss_enclosure = "/assets/audio/episode001.mp3"
+rss_pubdate = date
 episode_length = "71548266"
 +++
 
