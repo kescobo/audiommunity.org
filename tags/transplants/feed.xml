@@ -31,9 +31,11 @@
   </title>
     <link> http://audiommunity.org/episodes/episode001/index.html </link>
     <guid> episodes/episode001/index.html </guid>
+    <pubDate> Thu, 30 Jan 2014 00:00:00 +0000 </pubDate>
   <description>
     <![CDATA[  An episode about transplantation and MHC  ]]>
   </description>
+  <itunes:duration>2979</itunes:duration>
   <atom:author>
     <atom:name>Audiommunity.org</atom:name>
   </atom:author>
