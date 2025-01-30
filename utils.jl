@@ -93,8 +93,11 @@ function hfun_embed_audio()
     """
 end
 
-function hfun_pub_date()
-    d = getlvar(:date)
-    dt = DateTime(d, Time(10,0,0))
+function hfun_pub_date(d)
+    @warn d
+    date = Date(d)
+    dt = DateTime(date, Time(10,0,0))
     return Dates.format(dt, "e, d u yyyy HH:MM:SS -0500")
 end
+
+

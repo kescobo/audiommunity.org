@@ -10,11 +10,10 @@ rss_title = title
 rss_enclosure = "/assets/audio/episode001.mp3"
 rss_pubdate = date
 episode_length = "71548266"
+itunes_duration = "2979"
 +++
 
 # {{title}}
-
-{{pub_date}}
 
 {{embed_audio}}
 

@@ -23,7 +23,7 @@ defining your own `rss_enclosures` variable with a list of string and use that.
   </title>
     <link> {{rss_website_url}}/{{_relative_url}} </link>
     <guid> {{_relative_url}} </guid>
-    <!-- <pubDate> {{pub_date}} </pubDate> -->
+    <pubDate> {{ rss_pubdate }} </pubDate>
 
   <description>
     <!-- XXX <![CDATA[  {{fd2rss rss_description}}  ]]> -->
@@ -37,9 +37,10 @@ defining your own `rss_enclosures` variable with a list of string and use that.
   </content:encoded>
   {{end}}
 
-  <!-- RFC1123 enforces a RSS-compliant date formatting -->
-  <!-- XXX <pubDate>{{RFC822 rss_pubdate}}</pubDate> -->
-
+  {{isnotempty itunes_duration}}
+  <itunes:duration>{{itunes_duration}}</itunes:duration>
+  {{end}}
+  
   <!-- if given this must be an email, see specs -->
   {{isnotempty rss_author}}
   <author> {{rss_author}} </author>

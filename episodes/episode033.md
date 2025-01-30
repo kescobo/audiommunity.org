@@ -3,12 +3,14 @@ using Dates
 title = "Emmunity is dead. Long live Audiommunity!"
 season = 2
 episode = 33
-date = Date(2025, 01, 30)
+date = DateTime(2025, 01, 30, 13, 0, 0)
 tags = ["meta", "autoimmunity", "careers"]
 rss_descr = "Audiommunity is back! Again!"
 rss_title = title
 rss_enclosure = "/assets/audio/episode033.mp3"
+rss_pubdate = date
 episode_length = "29307524"
+itunes_duration = "3668"
 +++
 
 # {{title}}
