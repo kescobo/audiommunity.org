@@ -39,16 +39,12 @@ to everything having to do with science.
 
 ## Links
 
-- [The paper][paper]
+- [The paper](https://doi.org/10.1073/pnas.2402053122)
   Postdoc publications and citations link to academic retention and faculty success
-- [A detailed look][govt_agencies]
+- [A detailed look](https://www.science.org/content/blog-post/revised-and-extended-what-s-happening-inside-nih-and-nsf)
   at what's happening inside government funding agencies
-- [Matt is explaining indirects][matt] on youtube
-- [The internet archive][archive]: Donate if you can!
-- [Kevin's paper doing bibliometrics][women]
+- [Matt is explaining indirects](https://youtu.be/GxhHKkZkvjI?si=WKISpg1K63FnHp2o)
+ on youtube
+- [The internet archive](https://archive.org): Donate if you can!
+- [Kevin's paper doing bibliometrics](https://doi.org/10.1371/journal.pcbi.1005134)
 
-[paper]: https://doi.org/10.1073/pnas.2402053122
-[govt_agencies]: https://www.science.org/content/blog-post/revised-and-extended-what-s-happening-inside-nih-and-nsf
-[archive]: https://archive.org
-[matt]: https://youtu.be/GxhHKkZkvjI?si=WKISpg1K63FnHp2o
-[women]: https://doi.org/10.1371/journal.pcbi.1005134
