@@ -3,7 +3,7 @@ using Dates
 title = "A blacksmith that decides to make wheels"
 season = 2
 episode = 34
-date = DateTime(2025, 02, 07, 13, 0, 0)
+date = DateTime(2025, 02, 10, 13, 0, 0)
 tags = ["meta", "autoimmunity", "careers"]
 rss_descr = """
 Are you bleak, disenchanted, stressed out, and unhappy? 
