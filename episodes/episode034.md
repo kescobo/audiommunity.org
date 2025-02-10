@@ -13,7 +13,7 @@ And about a new paper showing how academic success
 is linked to publications.
 """
 rss_title = title
-rss_enclosure = "/assets/audio/episode034.mp3"
+rss_enclosure = "https://archive.org/download/audiommunity_episode034/audiommunity_episode034.mp3"
 rss_pubdate = date
 episode_length = "119519651"
 itunes_duration = "4979"
@@ -39,10 +39,16 @@ to everything having to do with science.
 
 ## Links
 
-- [The paper](https://doi.org/10.1073/pnas.2402053122)
+- [The paper][paper]
   Postdoc publications and citations link to academic retention and faculty success
-- [A detailed look](https://www.science.org/content/blog-post/revised-and-extended-what-s-happening-inside-nih-and-nsf)
+- [A detailed look][govt_agencies]
   at what's happening inside government funding agencies
+- [Matt is explaining indirects][matt] on youtube
 - [The internet archive][archive]: Donate if you can!
 - [Kevin's paper doing bibliometrics][women]
 
+[paper]: https://doi.org/10.1073/pnas.2402053122
+[govt_agencies]: https://www.science.org/content/blog-post/revised-and-extended-what-s-happening-inside-nih-and-nsf
+[archive]: https://archive.org
+[matt]: https://youtu.be/GxhHKkZkvjI?si=WKISpg1K63FnHp2o
+[women]: https://doi.org/10.1371/journal.pcbi.1005134
