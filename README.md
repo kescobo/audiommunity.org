@@ -54,3 +54,49 @@ Eg. `<guid>audiommunity-001</guid>`
 
 Keeping track at https://github.com/kescobo/audiommunity.org/issues
 
+## Parsing old episodes
+
+```sh
+curl \
+-X GET \
+-H "Authorization: Token $BASEROW_TOAKEN" \
+"https://api.baserow.io/api/database/rows/table/422731/?user_field_names=true" > repo.json
+```
+
+```julia
+using JSON3
+using Dates
+
+resp = JSON3.read("resp.json")[:results]
+
+for ep in resp
+    num = ep[Symbol("Episode number")]
+    parse(Int, num) in 1:32 || continue
+    ep[:Type][:value] == "Main episode" || continue
+    date = get(ep, Symbol("Release date"), "2000-01-01")
+
+    content = """
+    +++
+    using Dates
+    title = "$(ep[:Title])"
+    season = 1
+    episode = $num
+    date = Date("$date")
+    tags = ["archive"]
+    rss_descr = ""
+    rss_title = title
+    rss_enclosure = ""
+    rss_pubdate = date
+    episode_length = ""
+    itunes_duration = ""
+    +++
+
+    """ * ep[:Description]
+
+    content = replace(content,
+        r"\[(.+?)\]\(http://static1.+?\)"=> s"\1"
+    )
+
+    open(io-> println(io, content), "episodes/episode$(lpad(num, 3, "0")).md", "w")
+end
+```
