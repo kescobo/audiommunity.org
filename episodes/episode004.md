@@ -5,12 +5,12 @@ season = 1
 episode = 4
 date = Date("2014-04-25")
 tags = ["archive"]
-rss_descr = ""
+rss_descr = "After a long absence, we're back! With an episode about the autoimmune disease multiple sclerosis and how immune cells navigate the around the body."
 rss_title = title
-rss_enclosure = ""
+rss_enclosure = "https://archive.org/download/audiommunity_ep004_disclaimer/audiommunity_ep004_disclaimer.mp3"
 rss_pubdate = date
-episode_length = ""
-itunes_duration = ""
+episode_length = "92091284"
+itunes_duration = "4573"
 +++
 
 # {{title}}

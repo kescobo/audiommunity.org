@@ -5,12 +5,12 @@ season = 1
 episode = 3
 date = Date("2014-03-06")
 tags = ["archive"]
-rss_descr = ""
+rss_descr = "Today, we're talking the *other* immunity (that both Kate and Kevin happen to study). Neglected for nearly one hundred years, the innate immune system is required for getting inflammation going, and without it, adaptive immunity wouldn't function."
 rss_title = title
-rss_enclosure = ""
+rss_enclosure = "https://archive.org/download/audiommunity_ep003_disclaimer/audiommunity_ep003_disclaimer.mp3"
 rss_pubdate = date
-episode_length = ""
-itunes_duration = ""
+episode_length = "116785124"
+itunes_duration = "5885"
 +++
 
 # {{title}}

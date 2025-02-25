@@ -5,12 +5,12 @@ season = 1
 episode = 2
 date = Date("2014-02-24")
 tags = ["archive"]
-rss_descr = ""
+rss_descr = "In this episode, we're talking antibodies - what they are  and what they have to do with Vaccines. Also, we discuss efforts to use engineered antibodies to treat HIV."
 rss_title = title
-rss_enclosure = ""
+rss_enclosure = "https://archive.org/download/audiommunity_ep002_disclaimer/audiommunity_ep002_disclaimer.mp3"
 rss_pubdate = date
-episode_length = ""
-itunes_duration = ""
+episode_length = "84944540"
+itunes_duration = "5195"
 +++
 
 # {{title}}

@@ -5,12 +5,12 @@ season = 1
 episode = 6
 date = Date("2014-06-04")
 tags = ["archive"]
-rss_descr = ""
+rss_descr = "In this episode, Kevin talks with Pamela Ronald, professor of plant pathology at the University of California, Davis. Almost 20 years ago, Ronald discovered Xa21, a plant pattern recognition receptor that guards against bacterial infection. This receptor shares many features with Toll-like receptors, and the role of Xa21 was shown a year before TLRs were implicated in immunity."
 rss_title = title
-rss_enclosure = ""
+rss_enclosure = "https://archive.org/download/audiommunity_ep006_disclaimer/audiommunity_ep006_disclaimer.mp3"
 rss_pubdate = date
-episode_length = ""
-itunes_duration = ""
+episode_length = "34469348"
+itunes_duration = "2268"
 +++
 
 # {{title}}
