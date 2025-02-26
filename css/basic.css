@@ -188,3 +188,37 @@ td {
 table tbody tr td {
   border: 1px solid lightgray;
 }
+
+/* ==================================================================
+    Podcast episodes
+================================================================== */
+
+
+.podcast-grid {
+    display: grid;
+    grid-template-columns: minmax(150px, auto) 1fr;
+    gap: 2px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.podcast-grid > div {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+@media (max-width: 600px) {
+    .podcast-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .date, .title {
+        border-bottom: none;
+    }
+    
+    .title {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+    }
+}
+
