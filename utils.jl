@@ -30,11 +30,13 @@ end
 
 function hfun_list_episodes(tag::String, basepath::String="episodes")
   return string(
-    node("ul",
-      (
-        node("li",
-            node("span", class="date", string(Dates.format(p.date, "U d, yyyy"), " | ")),
-            node("a", class="title", href=p.href, string("Episode $(p.episode) - ", p.title))
+    node("div", class = "podcast-grid",
+      Iterators.flatten(
+        (
+         node("div", class="date", Dates.format(p.date, "U d, yyyy")),
+         node("div", class="title",
+              node("a", href=p.href, string("Episode $(p.episode) - ", p.title))
+             )
         )
         for p in get_episodes(tag, basepath) if !p.draft
       )...
