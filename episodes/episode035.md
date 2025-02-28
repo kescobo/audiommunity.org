@@ -33,4 +33,4 @@ Also, more griping about the state of science in the US - it's not great folks
   Scratching promotes allergic inflammation and host
   defense via neurogenic mast cell activation
 - [Bluesky post](https://bsky.app/profile/jeremymberg.bsky.social/post/3lhzstbbpbs2f) about how the actual percent for indirects is basically the same across institutions
-- [Episode 12](/episodes/episode012.md) about bee stings and type-2 immunity, related to this stuff
+- [Episode 12](/episodes/episode012) about bee stings and type-2 immunity, related to this stuff
