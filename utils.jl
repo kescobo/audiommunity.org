@@ -102,4 +102,10 @@ function hfun_pub_date(d)
     return Dates.format(dt, "e, d u yyyy HH:MM:SS -0500")
 end
 
-
+function hfun_episode_title()
+    title = getlvar(:title)
+    epnum = getlvar(:episode)
+    return """
+    <h2>Episode $epnum - $title</h2>
+    """
+end

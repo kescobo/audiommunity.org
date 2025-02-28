@@ -13,7 +13,7 @@ episode_length = ""
 itunes_duration = ""
 +++
 
-# {{title}}
+{{episode_title}}
 
 {{embed_audio}}
 

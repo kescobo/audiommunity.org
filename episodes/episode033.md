@@ -13,7 +13,7 @@ episode_length = "29307524"
 itunes_duration = "3668"
 +++
 
-# {{title}}
+{{episode_title}}
 
 {{embed_audio}}
 
