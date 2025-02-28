@@ -1,6 +1,7 @@
 __site/
 .envrc
 .DS_Store
+.envrc
 node_modules/
 package-lock.json
 __cache/
