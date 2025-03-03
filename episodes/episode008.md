@@ -5,12 +5,12 @@ season = 1
 episode = 8
 date = Date("2014-08-18")
 tags = ["archive"]
-rss_descr = ""
+rss_descr = "Kate and Kevin talk influenza and gain of function research. Should we be making flu more deadly?"
 rss_title = title
-rss_enclosure = ""
+rss_enclosure = "https://archive.org/download/audiommunity_season1/audiommunity_ep008_disclaimer.mp3"
 rss_pubdate = date
-episode_length = ""
-itunes_duration = ""
+episode_length = "79113656"
+itunes_duration = "4945"
 +++
 
 {{episode_title}}

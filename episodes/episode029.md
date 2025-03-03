@@ -7,10 +7,10 @@ date = Date("2018-08-20")
 tags = ["archive"]
 rss_descr = ""
 rss_title = title
-rss_enclosure = ""
+rss_enclosure = "https://archive.org/download/audiommunity_season1/audiommunity_ep029_disclaimer.mp3"
 rss_pubdate = date
-episode_length = ""
-itunes_duration = ""
+episode_length = "31888265"
+itunes_duration = "3986"
 +++
 
 {{episode_title}}

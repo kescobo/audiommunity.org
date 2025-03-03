@@ -5,12 +5,12 @@ season = 1
 episode = 5
 date = Date("2014-05-14")
 tags = ["archive"]
-rss_descr = ""
+rss_descr = "In Episode 5, we're talking about neutrophils, and the special way they die."
 rss_title = title
-rss_enclosure = ""
+rss_enclosure = "https://archive.org/download/audiommunity_season1/audiommunity_ep005_disclaimer.mp3"
 rss_pubdate = date
-episode_length = ""
-itunes_duration = ""
+episode_length = "49135951"
+itunes_duration = "3071"
 +++
 
 {{episode_title}}
