@@ -48,7 +48,7 @@ UUID("389e74b1-be77-567e-b7b8-98eacec29284")
 
 #### Episode-specific `guid`
 
-Eg. `<guid>audiommunity-001</guid>`
+Eg. `<guid isPermaLink="false">episodes/episode034/index.html</guid>`
 
 ### Other issues
 
@@ -98,5 +98,52 @@ for ep in resp
     )
 
     open(io-> println(io, content), "episodes/episode$(lpad(num, 3, "0")).md", "w")
+end
+```
+
+## Filling in enclodures, episode length, and itunes duration for season 1
+
+```julia
+for ep in readdir("episodes"; join=true)
+    lines = readlines(ep)
+    encl_ln = findfirst(line -> startswith(line, "rss_enclosure"), lines)
+    eplen_ln = findfirst(line -> startswith(line, "episode_length"), lines)
+    itdur_ln = findfirst(line -> startswith(line, "itunes_duration"), lines)
+    epnum_ln = findfirst(line -> startswith(line, "episode"), lines)
+    epnum = parse(Int, match(r"episode ?= ?(\d+)", lines[epnum_ln])[1])
+    epfile = joinpath("/home/kevin/Audio/Season 1/disclaimers/", "audiommunity_ep$(lpad(epnum, 3, '0'))_disclaimer.mp3")
+
+    @info "Checking episode $epnum"
+    if !isfile(epfile)
+        @warn "disclaimer file not found, skipping"
+        continue
+    end
+
+    if lines[encl_ln] == "rss_enclosure = \"\""
+        lines[encl_ln] = "rss_enclosure = \"https://archive.org/download/audiommunity_season1/$(basename(epfile))\""
+    else
+        @warn "enclusure line already exists: `$(lines[encl_ln])`"
+    end
+
+    if lines[eplen_ln] == "episode_length = \"\""
+        lines[eplen_ln] = "episode_length = \"$(filesize(epfile))\""
+    else
+        @warn "episode_length already exists: $(lines[eplen_ln])"
+    end
+
+    if lines[itdur_ln] == "itunes_duration = \"\""
+        dur = let io = IOBuffer()
+            run(pipeline(`soxi -D $epfile`; stdout=io))
+            seek(io, 0)
+            round(Int, parse(Float64, first(readlines(io))))
+        end
+        lines[itdur_ln] = "itunes_duration = \"$(dur)\""
+    else
+        @warn "itunes_duration already exists: `$(lines[itdur_ln])`"
+    end
+
+    open(ep, "w") do io
+        println.(io, lines)
+    end
 end
 ```
