@@ -18,7 +18,7 @@
       <![CDATA[A podcast about our bodies' never-ending fight with the outside world]]>
     </description>
     <itunes:image href="http://audiommunity.org/assets/audiommunity_cover.png"/>
-    <itunes:category text="Science & Medicine"/>
+    <itunes:category text="Science &amp Medicine"/>
     <itunes:explicit>no</itunes:explicit>
     <itunes:author>Audiommunity.org</itunes:author>
     <podcast:guid>389e74b1-be77-567e-b7b8-98eacec29284</podcast:guid>
