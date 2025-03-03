@@ -5,7 +5,9 @@ season = 1
 episode = 9
 date = Date("2014-09-04")
 tags = ["archive"]
-rss_descr = ""
+rss_descr = """
+In this episode, we're joined by Abbie Smith, a postdoctoral fellow studying HIV at Emory University, and author of the popular (and always wonderful) ERV blog.
+"""
 rss_title = title
 rss_enclosure = "https://archive.org/download/audiommunity_season1/audiommunity_ep009_disclaimer.mp3"
 rss_pubdate = date

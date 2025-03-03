@@ -5,7 +5,10 @@ season = 1
 episode = 10
 date = Date("2015-01-28")
 tags = ["archive"]
-rss_descr = ""
+rss_descr = """
+Turns out *Staphylococcus aureus* can evade the immune system by activating it.
+Also, Matt's bad hair day and a link between tacos and tampons.
+"""
 rss_title = title
 rss_enclosure = "https://archive.org/download/audiommunity_season1/audiommunity_ep010_disclaimer.mp3"
 rss_pubdate = date

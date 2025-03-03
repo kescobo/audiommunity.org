@@ -5,7 +5,10 @@ season = 1
 episode = 11
 date = Date("2015-03-11")
 tags = ["archive"]
-rss_descr = ""
+rss_descr = """
+A discussion about sCD38, a molecule that's secreted in mouse and human sperm,
+and may play a role in suppressing a mother's immune response to a new fetus.
+"""
 rss_title = title
 rss_enclosure = "https://archive.org/download/audiommunity_season1/audiommunity_ep011_disclaimer.mp3"
 rss_pubdate = date

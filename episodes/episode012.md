@@ -5,7 +5,8 @@ season = 1
 episode = 12
 date = Date("2015-04-16")
 tags = ["archive"]
-rss_descr = ""
+rss_descr = """
+To celebrate the return of the warm(ish) weather, we discuss a paper looking at immune responses to bee venom, and the underlying causes of environmental allergy."""
 rss_title = title
 rss_enclosure = "https://archive.org/download/audiommunity_season1/audiommunity_ep012_disclaimer.mp3"
 rss_pubdate = date
