@@ -34,7 +34,7 @@ rss_file variable in your config file if you want to use something different tha
 
         <!-- Add these channel-level iTunes tags -->
     <itunes:image href="http://audiommunity.org/assets/audiommunity_cover.png"/>
-    <itunes:category text="Science & Medicine"/>
+    <itunes:category text="Science &amp Medicine"/>
     <itunes:explicit>no</itunes:explicit>
     <itunes:author>Audiommunity.org</itunes:author>
 
