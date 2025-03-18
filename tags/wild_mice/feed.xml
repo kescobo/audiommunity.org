@@ -13,7 +13,7 @@
     </title>
     <link>http://audiommunity.org/</link>
     <language>en</language>
-    <atom:link href="http://audiommunity.org/tags/th2/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="http://audiommunity.org/tags/wild_mice/feed.xml" rel="self" type="application/rss+xml"/>
     <description>
       <![CDATA[A podcast about our bodies' never-ending fight with the outside world]]>
     </description>
@@ -31,19 +31,19 @@
 
 <item>
   <title>
-    <![CDATA[One hundred times mosquito, by mass]]>
+    <![CDATA[Mice touching grass]]>
   </title>
-    <link>http://audiommunity.org/episodes/episode035/index.html</link>
-    <guid isPermaLink="false">episodes/episode035/index.html</guid>
-    <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
+    <link>http://audiommunity.org/episodes/episode036/index.html</link>
+    <guid isPermaLink="false">episodes/episode036/index.html</guid>
+    <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
   <description>
-    <![CDATA[  In this episode, we're talking itch, and the sweet sweet relief you get when degranulating your mast cells.
+    <![CDATA[  How does "rewilding" mice change their immune system? Also, an interview with an organizer of the Atlanta Stand Up for Science march!
   ]]>
   </description>
-  <itunes:duration>4666</itunes:duration>
+  <itunes:duration>7626</itunes:duration>
   <atom:author>
     <atom:name>Audiommunity.org</atom:name>
   </atom:author>
-    <enclosure url="https://archive.org/download/audiommunity_episode035/audiommunity_episode035.mp3" length="74656851" type="audio/mpeg" />
+    <enclosure url="https://archive.org/download/audiommunity_episode036/audiommunity_episode036.mp3" length="122020563" type="audio/mpeg" />
 </item>
 </channel></rss>

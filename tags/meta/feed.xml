@@ -21,6 +21,10 @@
     <itunes:category text="Science &amp; Medicine"/>
     <itunes:explicit>no</itunes:explicit>
     <itunes:author>Audiommunity.org</itunes:author>
+    <itunes:owner>
+        <itunes:name>Audiommunity</itunes:name>
+        <itunes:email>podcast@bonham.ch</itunes:email>
+    </itunes:owner>
     <podcast:guid>389e74b1-be77-567e-b7b8-98eacec29284</podcast:guid>
     <podcast:locked>no</podcast:locked>
     <podcast:funding url="https://patreon.com/audiommunity">Support the show</podcast:funding>
