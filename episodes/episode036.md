@@ -11,8 +11,8 @@ How does "rewilding" mice change their immune system? Also, an interview with an
 rss_title = title
 rss_enclosure = "https://archive.org/download/audiommunity_episode036/audiommunity_episode036.mp3"
 rss_pubdate = date
-episode_length = "74656851"
-itunes_duration = "4666"
+episode_length = "122020563"
+itunes_duration = "7626"
 +++
 
 {{episode_title}}
