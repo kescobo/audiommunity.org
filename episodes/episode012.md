@@ -14,9 +14,7 @@ episode_length = "50548235"
 itunes_duration = "3159"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 Image caption2: This is in no way related to the episode, but it's the figure Kate made for a [recent review](http://www.ncbi.nlm.nih.gov/pubmed/25800355). It's so good, you almost can't tell it was done in PowerPoint
 

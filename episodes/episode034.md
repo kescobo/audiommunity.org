@@ -19,9 +19,7 @@ episode_length = "119519651"
 itunes_duration = "4979"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 Are you bleak, disenchanted, stressed out, and unhappy? 
 No, we're not talking (only) about US politics,

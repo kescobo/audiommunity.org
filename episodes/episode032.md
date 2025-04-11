@@ -13,9 +13,7 @@ episode_length = "39510089"
 itunes_duration = "4939"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 In this episode, Chadene, Kate and Kevin discuss Kate's recently published paper about how STING, once thought to be involved only in defense against DNA viruses, actually slows RNA virus replication as well. Also, Chadene throws herself under the bus, and Kevin manages to only talk for about 20% of the time.
 

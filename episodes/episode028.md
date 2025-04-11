@@ -13,9 +13,7 @@ episode_length = "54479977"
 itunes_duration = "3405"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 Blame Kevin for the delay on this one - it's hard to edit podcasts in Hong Kong.
 

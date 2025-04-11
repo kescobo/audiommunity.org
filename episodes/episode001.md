@@ -15,9 +15,7 @@ episode_length = "54071996"
 itunes_duration = "3031"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 
 In this episode, we're talking transplantation: Why is it so damned hard to transfer tumors between mice? Why do we have to go to extraordinary lengths to transplant kidneys between humans?

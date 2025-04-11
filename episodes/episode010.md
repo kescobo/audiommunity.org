@@ -16,9 +16,7 @@ episode_length = "52059158"
 itunes_duration = "3254"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 Turns out *Staphylococcus aureus* can evade the immune system by activating it.
 

@@ -13,9 +13,7 @@ episode_length = "24819593"
 itunes_duration = "3102"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 In this episode we talk about lymphatics in the brain and why that's both obvious and not obvious. Meanwhile, Kate drinks disgusting smoothies and Kevin triggers Matt with a trigger warning.
 

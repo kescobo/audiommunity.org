@@ -13,9 +13,7 @@ episode_length = "36987017"
 itunes_duration = "4623"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 In this episode, we're talking cancer, checkpoint blockade and poop - what's not to love? Also, Camilla is the only one drinking, Matt thinks the study needs more mice, and it took Kevin an extra 2 hours to edit this episode to remove all (he hopes) of his sniffles.
 

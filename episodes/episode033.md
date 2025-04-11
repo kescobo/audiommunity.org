@@ -13,9 +13,7 @@ episode_length = "29307524"
 itunes_duration = "3668"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 Aaaaand we're back! After a 7 year hiatus,
 6 kids (3 for Matt, 2 for Kevin, 3 for Kate),

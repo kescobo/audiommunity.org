@@ -13,9 +13,7 @@ episode_length = "116785124"
 itunes_duration = "5885"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 Today, we're talking the *other* immunity (that both Kate and Kevin happen to study). Neglected for nearly one hundred years, the innate immune system is required for getting inflammation going, and without it, adaptive immunity wouldn't function.
 

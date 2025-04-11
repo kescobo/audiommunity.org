@@ -13,9 +13,7 @@ episode_length = "67251138"
 itunes_duration = "4203"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 image caption: Nope... not that Draco. [Source](http://wicked-sisters.deviantart.com/art/2-Revenge-Draco-Malfoy-64833189)
 

@@ -13,9 +13,7 @@ episode_length = "36847625"
 itunes_duration = "4606"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 This week - Evidence that viruses drive the evolution of their hosts - who would have guessed? Matt struggles to remember how evolution works, and Kate and Kevin yell past each other about open peer review.
 

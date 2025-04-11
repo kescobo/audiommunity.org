@@ -13,9 +13,7 @@ episode_length = "31888265"
 itunes_duration = "3986"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 I swear, we know how to count; this episode was originally recorded back in January, but Camilla's audio file was weirdly corrupted. And in this attempt, Chadene's computer exploded, but we soldiered on without her.
 

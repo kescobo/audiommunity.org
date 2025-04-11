@@ -13,9 +13,7 @@ episode_length = "74043393"
 itunes_duration = "4628"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 Image caption: By SuSanA Secretariat - <https://www.flickr.com/photos/gtzecosan/16424898321/>, CC BY 2.0
 

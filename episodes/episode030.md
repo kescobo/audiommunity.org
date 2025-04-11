@@ -13,9 +13,7 @@ episode_length = "69638521"
 itunes_duration = "4352"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 Image caption: Neutrophil grabbing Staph. [From Wikipedia](https://en.wikipedia.org/wiki/Methicillin-resistant_Staphylococcus_aureus#/media/File:Human_neutrophil_ingesting_MRSA.jpg)
 

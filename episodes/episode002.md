@@ -13,9 +13,7 @@ episode_length = "84944540"
 itunes_duration = "5195"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 In this episode, we're talking antibodies - what they are  and what they have to do with Vaccines. Also, we discuss efforts to use engineered antibodies to treat HIV.
 

@@ -13,9 +13,7 @@ episode_length = "77004154"
 itunes_duration = "4605"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 After a hard day's work, sometimes you want to just kick your feet back and relax. Unfortunately, sometimes your CD8 T-cells want the same thing, even though they don't have feet. During chronic viral infections, T-cells get exhausted, and this fact has enormous implications for human health. We discuss what killer T-cells are, how and why they get exhausted, and new research that points towards potential therapy for everything from HIV to cancer.
 

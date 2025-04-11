@@ -13,9 +13,7 @@ episode_length = "92091284"
 itunes_duration = "4573"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 After a long absence, we're back! With an episode about the autoimmune disease multiple sclerosis and how immune cells navigate the around the body.
 

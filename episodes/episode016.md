@@ -13,9 +13,7 @@ episode_length = "59483785"
 itunes_duration = "3718"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 image caption: Taking the breaks off of the immune system can get it to attack cancer cells
 

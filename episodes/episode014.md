@@ -13,9 +13,7 @@ episode_length = "34880585"
 itunes_duration = "4360"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 Image caption: Non of this swelling is due to inflammation or microbes. Source: wikipedia
 

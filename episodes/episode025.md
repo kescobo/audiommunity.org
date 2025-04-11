@@ -13,9 +13,7 @@ episode_length = "51610687"
 itunes_duration = "3226"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 OMG, Audiommunity is back! With a... vengeance? That doesn't make any sense. But we're back!
 

@@ -106,6 +106,6 @@ function hfun_episode_title()
     title = getlvar(:title)
     epnum = getlvar(:episode)
     return """
-    <h2>Episode $epnum - $title</h2>
+    <h1>Episode $epnum - $title</h1>
     """
 end

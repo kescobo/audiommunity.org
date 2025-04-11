@@ -13,9 +13,7 @@ episode_length = "74452575"
 itunes_duration = "4653"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 Image caption: One of many beautiful microscopy figures from this week's paper.
 

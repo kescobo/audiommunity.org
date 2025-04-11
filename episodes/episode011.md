@@ -16,9 +16,7 @@ episode_length = "27933065"
 itunes_duration = "3492"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 image caption: Image from [wikipedia](http://en.wikipedia.org/wiki/Sperm#mediaviewer/File:Sperm-egg.jpg)
 

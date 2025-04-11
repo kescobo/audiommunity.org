@@ -15,9 +15,7 @@ episode_length = "72404157"
 itunes_duration = "4525"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 In this episode, we're joined by Abbie Smith, a postdoctoral fellow studying HIV at Emory University, and author of the popular (and always wonderful) ERV, a blog at [scienceblogs.com](http://scienceblogs.com).
 

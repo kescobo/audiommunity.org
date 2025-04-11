@@ -16,10 +16,6 @@ episode_length = "78568275"
 itunes_duration = "4910"
 +++
 
-{{episode_title}}
-
-{{embed_audio}}
-
 You can now find and subscribe to us [on youtube!](https://youtube.com/@audiommunity)
 
 In this episode, we're talking about the OAS-RNaseL virus-sensing pathway,

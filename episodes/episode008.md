@@ -13,9 +13,7 @@ episode_length = "79113656"
 itunes_duration = "4945"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 Kate and Kevin talk influenza and gain of function research. Should we be making flu more deadly? How much can you learn from trying to make bird flu into Spanish flu? And would Edward have immunity to 1918 flu even though he died from it? Can Vampires even get the flu?
 

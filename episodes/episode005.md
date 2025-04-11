@@ -13,9 +13,7 @@ episode_length = "49135951"
 itunes_duration = "3071"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 In Episode 5, we're talking about neutrophils, and the [special way they die](http://en.wikipedia.org/wiki/Neutrophil_extracellular_traps).
 

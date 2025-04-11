@@ -15,9 +15,7 @@ episode_length = "122020563"
 itunes_duration = "7626"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 You can now find and subscribe to us [on youtube!](https://youtube.com/@audiommunity)
 

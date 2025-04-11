@@ -13,9 +13,7 @@ episode_length = "27525257"
 itunes_duration = "3441"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 Something a bit different this episiode. Last month, [we joined](http://www.microbeworld.org/podcasts/bacteriofiles/archives/2085-bacteriofiles-244-rabbit-viruses-exploding-cancer) Jesse Noar, host of the excellent Bacteriophiles podcast to record an episode about oncolytic viruses (viruses that blow up cancer cells). We hope you enjoy it, then head on over to [microbe world](http://www.microbeworld.org/podcasts/bacteriofiles/) and subscribe to Jesse's podcast.
 

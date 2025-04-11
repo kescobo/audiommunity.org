@@ -13,9 +13,7 @@ episode_length = "56572699"
 itunes_duration = "3536"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 image Caption: Kiwi's are delicious, but sacrificing their consumption to treat your cancer is probably a worthy trade-off. Image from Flickr user eldholm. Click for source
 

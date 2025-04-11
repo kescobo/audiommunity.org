@@ -14,9 +14,7 @@ episode_length = "65252039"
 itunes_duration = "4078"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 Finally! This episode was recorded back in June, but I (Kevin) have been super busy (/super lazy) and only now got it posted. For those of you that are still subscribed, thanks for not abandoning us! Though it took some time, I think this conversation was worth the wait.
 

@@ -13,9 +13,7 @@ episode_length = "61008082"
 itunes_duration = "3813"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 In this episode, we're talking cure for the common cold... or at least, a vaccine for it. Also, Kevin and Matt read the wrong paper, Chadene corrects Kevin's pronunciation of her name (again!) and we give a big round of applause for Dr. Kate Franz (though she's still too busy for us).
 

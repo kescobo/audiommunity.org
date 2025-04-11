@@ -13,9 +13,7 @@ episode_length = "69946139"
 itunes_duration = "4372"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 image caption2: Chemical structure of cGAMP - the "A" is on the bottom left, the "G" on the upper right and the "cyclic" part is that linkage in the middle between the sugars and the phosphate groups.
 

@@ -13,9 +13,7 @@ episode_length = "56676771"
 itunes_duration = "3542"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 image caption: Path of Devil Facial Tumor Disease. Figure 1 from doi:10.1038/ncomms12684
 

@@ -13,9 +13,7 @@ episode_length = "65295089"
 itunes_duration = "4081"
 +++
 
-{{episode_title}}
 
-{{embed_audio}}
 
 image caption: Graphical abstract from the paper. Guys, Matt and I don't charge that much to help with figure design...
 
