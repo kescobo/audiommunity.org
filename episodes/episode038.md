@@ -13,7 +13,7 @@ rss_title = title
 rss_pubdate = date
 rss_enclosure = "https://archive.org/download/audiommunity_episode038/audiommunity_episode038.mp3"
 episode_length = "84389955"
-itunes_duration = "4608.02"
+itunes_duration = "4608"
 +++
 
 You can now find and subscribe to us [on youtube!](https://youtube.com/@audiommunity)
