@@ -21,7 +21,7 @@ set filesize (stat -c %s "$output_file" 2>/dev/null; or stat -f %z "$output_file
 
 # Get duration in seconds using ffprobe
 set duration (ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$output_file")
-set duration (printf "%.2f" $duration)
+set duration (printf "%.0f" $duration)
 
 # Print the requested information
 echo "rss_enclosure = \"https://archive.org/download/$base_name/$output_file\""
@@ -29,3 +29,4 @@ echo "episode_length = \"$filesize\""
 echo "itunes_duration = \"$duration\""
 
 echo "Conversion complete!"
+
