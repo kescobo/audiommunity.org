@@ -14,7 +14,9 @@
 
 <div class="franklin-content">
 {{ispage episodes/*}}
-{{episode_title}}
-{{embed_audio}}
+    {{isnotpage episodes}}
+        {{episode_title}}
+        {{embed_audio}}
+    {{end}}
 {{end}}
 </div>
