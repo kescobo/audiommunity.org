@@ -31,6 +31,24 @@
 
 <item>
   <title>
+    <![CDATA[Mohawk Mice, Precious]]>
+  </title>
+    <link>http://audiommunity.org/episodes/episode040/index.html</link>
+    <guid isPermaLink="false">episodes/episode040/index.html</guid>
+    <pubDate>Wed, 21 May 2025 00:00:00 +0000</pubDate>
+  <description>
+    <![CDATA[  
+  ]]>
+  </description>
+  <itunes:duration>3763</itunes:duration>
+  <atom:author>
+    <atom:name>Audiommunity.org</atom:name>
+  </atom:author>
+    <enclosure url="https://archive.org/download/audiommunity_episode040/audiommunity_episode040.mp3" length="80556099" type="audio/mpeg" />
+</item>
+
+<item>
+  <title>
     <![CDATA[Ban the Lomb-Scargle]]>
   </title>
     <link>http://audiommunity.org/episodes/episode039/index.html</link>
@@ -41,6 +59,7 @@
 is two guys mansplaining menstruation...but also cool immunology!
   ]]>
   </description>
+  <itunes:duration>3816</itunes:duration>
   <atom:author>
     <atom:name>Audiommunity.org</atom:name>
   </atom:author>

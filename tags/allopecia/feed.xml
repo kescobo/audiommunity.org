@@ -13,7 +13,7 @@
     </title>
     <link>http://audiommunity.org/</link>
     <language>en</language>
-    <atom:link href="http://audiommunity.org/tags/autoimmunity/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="http://audiommunity.org/tags/allopecia/feed.xml" rel="self" type="application/rss+xml"/>
     <description>
       <![CDATA[A podcast about our bodies' never-ending fight with the outside world]]>
     </description>
@@ -45,44 +45,5 @@
     <atom:name>Audiommunity.org</atom:name>
   </atom:author>
     <enclosure url="https://archive.org/download/audiommunity_episode040/audiommunity_episode040.mp3" length="80556099" type="audio/mpeg" />
-</item>
-
-<item>
-  <title>
-    <![CDATA[A blacksmith that decides to make wheels]]>
-  </title>
-    <link>http://audiommunity.org/episodes/episode034/index.html</link>
-    <guid isPermaLink="false">episodes/episode034/index.html</guid>
-    <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
-  <description>
-    <![CDATA[  Are you bleak, disenchanted, stressed out, and unhappy? 
-No, we're not talking (only) about US politics,
-we're talking about Postdocs! 
-And about a new paper showing how academic success
-is linked to publications.
-  ]]>
-  </description>
-  <itunes:duration>4979</itunes:duration>
-  <atom:author>
-    <atom:name>Audiommunity.org</atom:name>
-  </atom:author>
-    <enclosure url="https://archive.org/download/audiommunity_episode034/audiommunity_episode034.mp3" length="119519651" type="audio/mpeg" />
-</item>
-
-<item>
-  <title>
-    <![CDATA[Emmunity is dead. Long live Audiommunity!]]>
-  </title>
-    <link>http://audiommunity.org/episodes/episode033/index.html</link>
-    <guid isPermaLink="false">episodes/episode033/index.html</guid>
-    <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
-  <description>
-    <![CDATA[  Audiommunity is back! Again!  ]]>
-  </description>
-  <itunes:duration>3668</itunes:duration>
-  <atom:author>
-    <atom:name>Audiommunity.org</atom:name>
-  </atom:author>
-    <enclosure url="http://audiommunity.org/assets/audio/episode033.mp3" length="29307524" type="audio/mpeg" />
 </item>
 </channel></rss>
