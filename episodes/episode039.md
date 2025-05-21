@@ -12,6 +12,7 @@ is two guys mansplaining menstruation...but also cool immunology!
 rss_title = title
 rss_pubdate = date
 rss_enclosure = "https://archive.org/download/audiommunity_episode039/audiommunity_episode039.mp3"
+itunes_duration = "3816"
 episode_length = "81831555"
 +++
 
