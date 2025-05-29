@@ -28,7 +28,7 @@ As you might imagine, the current regime isn't super happy
 about her work.
 
 No paper in this episode, just some honest kvetching
-and an inspiring speach from Abbie about what we can aspire to.
+and an inspiring speech from Abbie about what we can aspire to.
 
 ---
 
