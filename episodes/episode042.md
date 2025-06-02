@@ -2,7 +2,7 @@
 using Dates
 title = "Hypercube in the common parlance"
 season = 2
-episode = 41
+episode = 42
 date = DateTime(2025, 06, 3, 13, 0, 0)
 tags = ["vaccination", "public health", "computaional modeling"]
 rss_descr = """
