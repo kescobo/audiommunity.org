@@ -13,7 +13,7 @@
     </title>
     <link>http://audiommunity.org/</link>
     <language>en</language>
-    <atom:link href="http://audiommunity.org/tags/t_cells/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="http://audiommunity.org/tags/location/feed.xml" rel="self" type="application/rss+xml"/>
     <description>
       <![CDATA[A podcast about our bodies' never-ending fight with the outside world]]>
     </description>
@@ -48,24 +48,5 @@ why would T-cells migrating from fat to the brain affect hunger response?
     <atom:name>Audiommunity.org</atom:name>
   </atom:author>
     <enclosure url="https://archive.org/download/audiommunity_episode043/audiommunity_episode043.mp3" length="96387507" type="audio/mpeg" />
-</item>
-
-<item>
-  <title>
-    <![CDATA[Ban the Lomb-Scargle]]>
-  </title>
-    <link>http://audiommunity.org/episodes/episode039/index.html</link>
-    <guid isPermaLink="false">episodes/episode039/index.html</guid>
-    <pubDate>Tue, 06 May 2025 00:00:00 +0000</pubDate>
-  <description>
-    <![CDATA[  I'm certain that what you've really been missing in these dark times
-is two guys mansplaining menstruation...but also cool immunology!
-  ]]>
-  </description>
-  <itunes:duration>3816</itunes:duration>
-  <atom:author>
-    <atom:name>Audiommunity.org</atom:name>
-  </atom:author>
-    <enclosure url="https://archive.org/download/audiommunity_episode039/audiommunity_episode039.mp3" length="81831555" type="audio/mpeg" />
 </item>
 </channel></rss>
