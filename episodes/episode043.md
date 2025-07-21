@@ -3,7 +3,7 @@ using Dates
 title = "Why don't you go stain a brain?"
 season = 2
 episode = 43
-date = DateTime(2025, 07, 17, 13, 0, 0)
+date = DateTime(2025, 07, 21, 13, 0, 0)
 tags = ["CD4", "T-cells", "neuroscience", "location", "blood brain barrier", "microbiome", "interoception"]
 rss_descr = """
 Matt and Kevin discuss a new paper about the "subfornical organ"
