@@ -94,6 +94,56 @@ itunes_duration = &quot;duration_in_seconds&quot;
 <li>Episode content in markdown with Julia function calls for dynamic content</li>
 <li>CSS customizations in <code>_css/</code> directory</li>
 </ul>
+<h2 id="julia_development_guidelines" ><a href="#julia_development_guidelines"> Julia Development Guidelines</a></h2><h3 id="html_generation_in_utils.jl" ><a href="#html_generation_in_utils.jl"> HTML Generation in utils.jl</a></h3><p>Always use the <code>node()</code> function (from Hyperscript.jl) for generating HTML in Julia functions:</p>
+<pre><code class="julia"># Correct approach using node()
+function hfun_example()
+    return string(
+        node(&quot;div&quot;, class=&quot;container&quot;,
+            node(&quot;h3&quot;, &quot;Title&quot;),
+            node(&quot;p&quot;, &quot;Description&quot;)
+        )
+    )
+end
+
+# Avoid raw HTML strings
+function hfun_example()
+    return &quot;&quot;&quot;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;h3&gt;Title&lt;/h3&gt;
+        &lt;p&gt;Description&lt;/p&gt;
+    &lt;/div&gt;
+    &quot;&quot;&quot;
+end</code></pre>
+<h3 id="error_handling" ><a href="#error_handling"> Error Handling</a></h3><p>Do not use try/catch blocks in Julia code for this project. Instead, use defensive programming with conditional checks and default values:</p>
+<pre><code class="julia"># Correct approach
+function hfun_example()
+    duration = getlvar(:itunes_duration, &quot;&quot;)
+    if !isempty(duration) &amp;&amp; occursin(r&quot;^\d+$&quot;, duration)
+        # Process duration
+    else
+        # Handle missing/invalid duration
+    end
+end
+
+# Avoid try/catch
+function hfun_example()
+    try
+        duration = parse(Int, getlvar(:itunes_duration))
+    catch
+        duration = 0
+    end
+end</code></pre>
+<h3 id="code_formatting" ><a href="#code_formatting"> Code Formatting</a></h3><ul>
+<li>Do not add spaces on blank lines within functions</li>
+<li>Keep function structure clean and consistent</li>
+<li>Use meaningful variable names that match the domain (episodes, tags, metadata)</li>
+</ul>
+<h3 id="common_patterns" ><a href="#common_patterns"> Common Patterns</a></h3><ul>
+<li>Use <code>getlvar()</code> and <code>getvarfrom()</code> for accessing page/episode metadata</li>
+<li>Use <code>get_episodes()</code> function for retrieving episode lists</li>
+<li>Format dates with <code>Dates.format(date, &quot;U d, yyyy&quot;)</code></li>
+<li>Use CSS classes that match existing patterns in <code>_css/basic.css</code></li>
+</ul>
 
   <div class="page-foot">
     <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Audiommunity.org. Last modified: --test--.
