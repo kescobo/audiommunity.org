@@ -92,3 +92,69 @@ The site generates podcast RSS feeds automatically using episode metadata. Impor
 - Audio files hosted externally (Archive.org)
 - Episode content in markdown with Julia function calls for dynamic content
 - CSS customizations in `_css/` directory
+
+## Julia Development Guidelines
+
+### HTML Generation in utils.jl
+
+Always use the `node()` function (from Hyperscript.jl) for generating HTML in Julia functions:
+
+```julia
+# Correct approach using node()
+function hfun_example()
+    return string(
+        node("div", class="container",
+            node("h3", "Title"),
+            node("p", "Description")
+        )
+    )
+end
+
+# Avoid raw HTML strings
+function hfun_example()
+    return """
+    <div class="container">
+        <h3>Title</h3>
+        <p>Description</p>
+    </div>
+    """
+end
+```
+
+### Error Handling
+
+Do not use try/catch blocks in Julia code for this project. Instead, use defensive programming with conditional checks and default values:
+
+```julia
+# Correct approach
+function hfun_example()
+    duration = getlvar(:itunes_duration, "")
+    if !isempty(duration) && occursin(r"^\d+$", duration)
+        # Process duration
+    else
+        # Handle missing/invalid duration
+    end
+end
+
+# Avoid try/catch
+function hfun_example()
+    try
+        duration = parse(Int, getlvar(:itunes_duration))
+    catch
+        duration = 0
+    end
+end
+```
+
+### Code Formatting
+
+- Do not add spaces on blank lines within functions
+- Keep function structure clean and consistent
+- Use meaningful variable names that match the domain (episodes, tags, metadata)
+
+### Common Patterns
+
+- Use `getlvar()` and `getvarfrom()` for accessing page/episode metadata
+- Use `get_episodes()` function for retrieving episode lists
+- Format dates with `Dates.format(date, "U d, yyyy")`
+- Use CSS classes that match existing patterns in `_css/basic.css`

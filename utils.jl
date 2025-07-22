@@ -192,26 +192,16 @@ function hfun_tag_episodes_table()
     if tag === nothing
         tag = getlvar(:tag_name, nothing)
     end
-    
-    # Debug: let's see what we're working with
-    @info "Current tag: $tag"
-    @info "tag_name var: $(getlvar(:tag_name, "NOT_FOUND"))"
-    @info "Number of posts: $(length(all_posts))"
-    if !isempty(all_posts)
-        @info "Sample post tags: $(first(all_posts).tags)"
-    end
-    
+
     # Filter posts that have the specific tag (check both keys and values)
     filtered_posts = filter(all_posts) do p
         !p.draft && (haskey(p.tags, tag) || tag in values(p.tags))
     end
-    
-    @info "Filtered posts: $(length(filtered_posts))"
-    
+ 
     if isempty(filtered_posts)
         return "<p>No episodes found for this topic.</p>"
     end
-    
+ 
     # Create episode blocks
     episode_blocks = [
         node("div", class="episode-block",
@@ -233,8 +223,69 @@ function hfun_tag_episodes_table()
         )
         for p in filtered_posts
     ]
-    
+ 
     return string(
         node("div", class="tag-episodes-container", episode_blocks...)
+    )
+end
+
+function hfun_latest_episode()
+    # Get all episodes and find the latest one
+    all_posts = get_episodes("", "episodes")
+    
+    if isempty(all_posts)
+        return "<p>No episodes found.</p>"
+    end
+    
+    # The posts are already sorted by date (newest first)
+    latest = first(all_posts)
+    
+    # Get episode description
+    episode_file = "episodes/episode$(lpad(latest.episode, 3, "0")).md"
+    description = getvarfrom(:rss_descr, episode_file, "")
+    
+    # Format duration from the episode file
+    duration = getvarfrom(:itunes_duration, episode_file, "")
+    formatted_duration = ""
+    if !isempty(duration) && occursin(r"^\d+$", duration)
+        total_seconds = parse(Int, duration)
+        hours = total_seconds ÷ 3600
+        minutes = (total_seconds % 3600) ÷ 60
+        seconds = total_seconds % 60
+        formatted_duration = "$(hours):$(lpad(minutes, 2, '0')):$(lpad(seconds, 2, '0'))"
+    end
+    
+    # Get the audio file URL for the player
+    audio_file = getvarfrom(:rss_enclosure, episode_file, "")
+    
+    # Create the latest episode box
+    return string(
+        node("div", class="latest-episode-box",
+            node("div", class="latest-episode-header",
+                node("h3", "Latest Episode"),
+                node("span", class="episode-date", Dates.format(latest.date, "U d, yyyy"))
+            ),
+            node("div", class="latest-episode-content",
+                node("h4", class="episode-title",
+                    node("a", href=latest.href,
+                        "Episode $(latest.episode) - $(latest.title)"
+                    )
+                ),
+                !isempty(description) ? node("p", class="episode-description", description) : "",
+                !isempty(formatted_duration) ? node("div", class="episode-meta",
+                    node("span", class="duration", "Duration: $formatted_duration")
+                ) : "",
+                !isempty(audio_file) ? node("div", class="episode-player",
+                    node("audio", controls="controls", preload="metadata",
+                        node("source", src=audio_file, type="audio/mpeg"),
+                        "Your browser does not support the audio element."
+                    )
+                ) : "",
+                node("div", class="episode-actions",
+                    node("a", href=latest.href, class="btn-listen", "Episode Page"),
+                    node("a", href="/episodes/", class="btn-all-episodes", "All Episodes")
+                )
+            )
+        )
     )
 end
