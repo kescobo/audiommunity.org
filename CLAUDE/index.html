@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+   <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
+   
+  <link rel="stylesheet" href="/css/franklin.css">
+  <link rel="stylesheet" href="/css/basic.css">
+  <link rel="icon" href="/assets/favicon.png">
+   <title>CLAUDE.md</title>  
+</head>
+<body>
+  <header>
+<div class="blog-name"><a href="/"><img src="/assets/audiommunity_banner.png" width="100%" id="banner"></a></div>
+
+<nav>
+  <ul>
+    <li><a href="/episodes/">Episodes</a></li>
+    <li><a href="https://patreon.com/audiommunity">Support Us!</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/feed"><img src="/assets/Rss-feed.svg" width="20px"></a></li>
+  </ul>
+  <img src="/assets/hamburger.svg" id="menu-icon">
+</nav>
+</header>
+
+<div class="franklin-content">
+
+</div>
+
+
+
+<div class="franklin-content" >
+  <h1 id="claude.md" ><a href="#claude.md"> CLAUDE.md</a></h1><p>This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.</p>
+<h2 id="project_overview" ><a href="#project_overview"> Project Overview</a></h2><p>Audiommunity.org is a podcast website built with Xranklin.jl, a Julia-based static site generator. The site hosts "Audiommunity", a podcast about our bodies' never-ending fight with the outside world, focusing on immunology, neuroscience, and related topics.</p>
+<h2 id="architecture" ><a href="#architecture"> Architecture</a></h2><p>The site follows Xranklin.jl conventions:</p>
+<ul>
+<li><strong>Content</strong>: Episodes are markdown files in <code>episodes/</code> with YAML frontmatter containing metadata like episode number, date, tags, RSS info</li>
+<li><strong>Templates</strong>: HTML layouts in <code>_layout/</code> handle page structure (header, footer, etc.)</li>
+<li><strong>Assets</strong>: Static files in <code>_assets/</code> (CSS, images, audio files)</li>
+<li><strong>Utilities</strong>: Julia functions in <code>utils.jl</code> for custom HTML generation and episode listing</li>
+<li><strong>Configuration</strong>: Site settings in <code>config.jl</code></li>
+<li><strong>Generated site</strong>: Output in <code>__site/</code> (do not edit directly)</li>
+</ul>
+<h3 id="key_files" ><a href="#key_files"> Key Files</a></h3><ul>
+<li><code>utils.jl</code>: Contains helper functions for episode listing, audio embedding, and tag display</li>
+<li><code>config.jl</code>: Website configuration including RSS settings</li>
+<li><code>episodes/</code>: Individual episode markdown files with metadata</li>
+<li><code>_layout/</code>: HTML templates for page structure</li>
+<li><code>_css/</code>: Stylesheets for site appearance</li>
+</ul>
+<h2 id="development_commands" ><a href="#development_commands"> Development Commands</a></h2><h3 id="build_and_serve_site" ><a href="#build_and_serve_site"> Build and Serve Site</a></h3><pre><code class="julia">using Xranklin
+serve()  # Start development server with live reload</code></pre>
+<h3 id="static_site_generation" ><a href="#static_site_generation"> Static Site Generation</a></h3><pre><code class="julia">using Xranklin
+optimize()  # Generate optimized static site in __site/</code></pre>
+<h3 id="julia_package_management" ><a href="#julia_package_management"> Julia Package Management</a></h3><pre><code class="bash">julia --project=. -e 'using Pkg; Pkg.instantiate()'  # Install dependencies</code></pre>
+<h2 id="content_management" ><a href="#content_management"> Content Management</a></h2><h3 id="adding_new_episodes" ><a href="#adding_new_episodes"> Adding New Episodes</a></h3><ol>
+<li>Create new markdown file: <code>episodes/episodeXXX.md</code></li>
+<li>Include required frontmatter:</li>
+</ol>
+<pre><code class="yaml">+++
+using Dates
+title = &quot;Episode Title&quot;
+season = 1
+episode = XXX
+date = Date(&quot;YYYY-MM-DD&quot;)
+tags = [&quot;tag1&quot;, &quot;tag2&quot;]
+rss_descr = &quot;Episode description&quot;
+rss_title = title
+rss_enclosure = &quot;https://archive.org/download/path/to/audio.mp3&quot;
+rss_pubdate = date
+episode_length = &quot;file_size_in_bytes&quot;
+itunes_duration = &quot;duration_in_seconds&quot;
++++</code></pre>
+<h3 id="episode_structure" ><a href="#episode_structure"> Episode Structure</a></h3><p>Episodes use a consistent format with:</p>
+<ul>
+<li>Frontmatter metadata for RSS feed generation</li>
+<li>Audio embedding via <code>&lbrace;&lbrace;embed_audio&rbrace;&rbrace;</code> function</li>
+<li>Automatic episode listing on main page</li>
+</ul>
+<h3 id="tags_and_organization" ><a href="#tags_and_organization"> Tags and Organization</a></h3><p>The site uses a tagging system for categorizing episodes by topic (immunology, neuroscience, careers, etc.). Tags generate automatic index pages.</p>
+<h2 id="rss_feed" ><a href="#rss_feed"> RSS Feed</a></h2><p>The site generates podcast RSS feeds automatically using episode metadata. Important RSS fields:</p>
+<ul>
+<li><code>rss_enclosure</code>: Direct link to audio file</li>
+<li><code>episode_length</code>: File size in bytes</li>
+<li><code>itunes_duration</code>: Duration in seconds</li>
+<li>Podcast GUID: <code>389e74b1-be77-567e-b7b8-98eacec29284</code></li>
+</ul>
+<h2 id="file_organization" ><a href="#file_organization"> File Organization</a></h2><ul>
+<li>Never edit files in <code>__site/</code> or <code>__cache/</code> (auto-generated)</li>
+<li>Audio files hosted externally (Archive.org)</li>
+<li>Episode content in markdown with Julia function calls for dynamic content</li>
+<li>CSS customizations in <code>_css/</code> directory</li>
+</ul>
+
+  <div class="page-foot">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Audiommunity.org. Last modified: --test--.
+    Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+</div>
+
+</div>
+
+    
+    
+        <script src="/libs/highlight/highlight.min.js"></script>
+<script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
+
+    
+  </body>
+</html>
