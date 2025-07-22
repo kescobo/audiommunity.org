@@ -87,7 +87,7 @@ function hfun_embed_audio()
     return """
     
     <p>
-    <audio controls>
+    <audio controls preload="metadata">
         <source src="$file" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -108,4 +108,62 @@ function hfun_episode_title()
     return """
     <h1>Episode $epnum - $title</h1>
     """
+end
+
+function hfun_episode_metadata()
+    date = getlvar(:date)
+    duration = getlvar(:itunes_duration, "")
+    
+    # Format date
+    formatted_date = Dates.format(date, "U d, yyyy")
+    
+    # Format duration (convert seconds to hh:mm:ss)
+    if !isempty(duration) && occursin(r"^\d+$", duration)
+        total_seconds = parse(Int, duration)
+        hours = total_seconds ÷ 3600
+        minutes = (total_seconds % 3600) ÷ 60
+        seconds = total_seconds % 60
+        formatted_duration = "$(hours):$(lpad(minutes, 2, '0')):$(lpad(seconds, 2, '0'))"
+    else
+        formatted_duration = ""
+    end
+    
+    metadata_items = [
+        node("div", class="metadata-item",
+            node("span", class="metadata-label", "Published: "),
+            node("span", class="metadata-value", formatted_date)
+        )
+    ]
+    
+    if !isempty(formatted_duration)
+        push!(metadata_items, 
+            node("div", class="metadata-item",
+                node("span", class="metadata-label", "Duration: "),
+                node("span", class="metadata-value", formatted_duration)
+            )
+        )
+    end
+    
+    # Add tags - reconstruct using node() instead of raw HTML
+    tags = get_page_tags()
+    if !isempty(tags)
+        base = globvar(:tags_prefix)
+        tag_nodes = [
+            node("span", class="tag",
+                node("a", href="/$base/$id/", name)
+            )
+            for (id, name) in tags
+        ]
+        
+        push!(metadata_items,
+            node("div", class="metadata-item",
+                node("span", class="metadata-label", "Topics: "),
+                node("div", class="metadata-tags", tag_nodes...)
+            )
+        )
+    end
+    
+    return string(
+        node("div", class="episode-metadata", metadata_items...)
+    )
 end
