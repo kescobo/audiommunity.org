@@ -167,3 +167,74 @@ function hfun_episode_metadata()
         node("div", class="episode-metadata", metadata_items...)
     )
 end
+
+function hfun_tag_episodes_table()
+    # Get the current tag name from the page context (try different methods)
+    tag = getlvar(:tag, nothing)
+    if tag === nothing
+        tag = getlvar(:fd_tag, nothing) 
+    end
+    if tag === nothing
+        # Try getting from the URL path
+        rpath = getlvar(:fd_rpath, "")
+        if !isempty(rpath)
+            path_parts = split(rpath, "/")
+            if length(path_parts) >= 2 && path_parts[end-1] != ""
+                tag = path_parts[end-1] # assumes /tags/tagname/index pattern
+            end
+        end
+    end
+    
+    # Get all episodes first, then filter by tag
+    all_posts = get_episodes("", "episodes")
+    
+    # Try to get tag_name like the template does
+    if tag === nothing
+        tag = getlvar(:tag_name, nothing)
+    end
+    
+    # Debug: let's see what we're working with
+    @info "Current tag: $tag"
+    @info "tag_name var: $(getlvar(:tag_name, "NOT_FOUND"))"
+    @info "Number of posts: $(length(all_posts))"
+    if !isempty(all_posts)
+        @info "Sample post tags: $(first(all_posts).tags)"
+    end
+    
+    # Filter posts that have the specific tag (check both keys and values)
+    filtered_posts = filter(all_posts) do p
+        !p.draft && (haskey(p.tags, tag) || tag in values(p.tags))
+    end
+    
+    @info "Filtered posts: $(length(filtered_posts))"
+    
+    if isempty(filtered_posts)
+        return "<p>No episodes found for this topic.</p>"
+    end
+    
+    # Create episode blocks
+    episode_blocks = [
+        node("div", class="episode-block",
+            node("div", class="episode-header",
+                node("span", class="episode-date", Dates.format(p.date, "U d, yyyy")),
+                node("span", class="episode-title",
+                    node("a", href=p.href, 
+                        "Episode $(p.episode) - $(p.title)"
+                    )
+                )
+            ),
+            node("div", class="episode-description", 
+                # Try to get the rss_descr from the episode file
+                begin
+                    episode_file = "episodes/episode$(lpad(p.episode, 3, "0")).md"
+                    getvarfrom(:rss_descr, episode_file, "")
+                end
+            )
+        )
+        for p in filtered_posts
+    ]
+    
+    return string(
+        node("div", class="tag-episodes-container", episode_blocks...)
+    )
+end

@@ -437,3 +437,91 @@ audio {
   }
 }
 
+/* ==================================================================
+    Tag Episodes Block Styling
+================================================================== */
+
+.tag-episodes-container {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.episode-block {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.episode-block:hover {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.episode-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.episode-date {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: #f3f4f6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  white-space: nowrap;
+}
+
+.episode-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.episode-title a:hover {
+  color: var(--accent-primary);
+}
+
+.episode-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .tag-episodes-container {
+    gap: 1rem;
+  }
+  
+  .episode-block {
+    padding: 1rem;
+  }
+  
+  .episode-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .episode-title a {
+    font-size: 1rem;
+  }
+  
+  .episode-description {
+    font-size: 0.875rem;
+  }
+}
+
