@@ -14,3 +14,4 @@ he pivoted to computational microbiology during his postdoctoral training,
 and now works to make machine learning and quantitative techniques
 accessible to other scientists with projects in
 gut microbiome epidemiology and immunology.
+
