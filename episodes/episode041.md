@@ -1,5 +1,6 @@
 +++
 using Dates
+youtube = "https://youtu.be/DgJeboUkq_4"
 title = "Sense of adventure"
 season = 2
 episode = 41

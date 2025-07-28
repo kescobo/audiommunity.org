@@ -13,6 +13,7 @@ rss_enclosure = "https://archive.org/download/audiommunity_episode035/audiommuni
 rss_pubdate = date
 episode_length = "74656851"
 itunes_duration = "4666"
+youtube = "https://youtu.be/PoxI6wxk1kk"
 +++
 
 

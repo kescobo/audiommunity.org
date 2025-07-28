@@ -13,11 +13,8 @@ rss_enclosure = "https://archive.org/download/audiommunity_episode036/audiommuni
 rss_pubdate = date
 episode_length = "122020563"
 itunes_duration = "7626"
+youtube = "https://youtu.be/7HgowmO76Ag"
 +++
-
-
-
-You can now find and subscribe to us [on youtube!](https://youtube.com/@audiommunity)
 
 In this episode, we discuss a new paper showing how "rewilding" mice -
 basically letting them run around in a field -

@@ -154,6 +154,74 @@ function create_tag_nodes(tags, base_path::String)
     ]
 end
 
+"""
+    collect_all_tags()::Dict{String, Int}
+
+Collect all tags from all episodes and count their frequency.
+Returns a dictionary mapping tag names to their usage count.
+"""
+function collect_all_tags()
+    episodes = get_episodes("", "episodes")
+    tag_counts = Dict{String, Int}()
+    
+    for episode in episodes
+        if !episode.draft
+            for (tag_id, tag_name) in episode.tags
+                tag_counts[tag_name] = get(tag_counts, tag_name, 0) + 1
+            end
+        end
+    end
+    
+    return tag_counts
+end
+
+"""
+    hfun_tag_cloud()::String
+
+Generate a tag cloud with tags sized based on their frequency of use.
+Most used tags appear larger, less used tags appear smaller.
+"""
+function hfun_tag_cloud()
+    tag_counts = collect_all_tags()
+    
+    if isempty(tag_counts)
+        return "<p>No tags found.</p>"
+    end
+    
+    # Get min and max counts for scaling
+    min_count = minimum(values(tag_counts))
+    max_count = maximum(values(tag_counts))
+    
+    # Create tag cloud items sorted alphabetically
+    base_path = "tags"  # Default tags path
+    tag_items = []
+    
+    for (tag_name, count) in sort(collect(tag_counts), by=x->lowercase(x[1]))
+        # Calculate size class based on frequency (1-5 scale)
+        if max_count == min_count
+            size_class = "tag-size-3"
+        else
+            normalized = (count - min_count) / (max_count - min_count)
+            size_level = ceil(Int, normalized * 4) + 1  # Scale to 1-5
+            size_class = "tag-size-$(size_level)"
+        end
+        
+        # Convert tag name to URL-safe format (lowercase, replace spaces with hyphens)
+        tag_id = lowercase(replace(tag_name, r"\s+" => "_", r"[^\w\-]" => ""))
+        
+        push!(tag_items, 
+            node("span", class="tag-cloud-item $size_class",
+                node("a", href="/$base_path/$tag_id/", tag_name),
+                node("span", class="tag-count", " ($count)")
+            )
+        )
+    end
+    
+    return string(
+        node("div", class="tag-cloud", tag_items...)
+    )
+end
+
 # ===============================================
 # EPISODE MANAGEMENT FUNCTIONS
 # ===============================================
@@ -430,7 +498,12 @@ function hfun_embed_youtube()
     if isempty(youtube_url)
         return string(
             node("div", class="youtube-placeholder",
-                node("p", "No YouTube video available for this episode")
+                node("p", "No YouTube video available for this episode"),
+                node("p", 
+                    "Visit our ",
+                    node("a", href="https://youtube.com/@audiommunity", target="_blank", "YouTube channel"),
+                    " to see videos from other episodes."
+                )
             )
         )
     end

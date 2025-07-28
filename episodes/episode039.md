@@ -14,9 +14,8 @@ rss_pubdate = date
 rss_enclosure = "https://archive.org/download/audiommunity_episode039/audiommunity_episode039.mp3"
 itunes_duration = "3816"
 episode_length = "81831555"
+youtube="https://youtu.be/bbnHZXaOTAU"
 +++
-
-You can now find and subscribe to us [on youtube!](https://youtube.com/@audiommunity)
 
 In this episode Matt and Kevin discuss the way that the immune system
 changes over the course of the menstrual cycle, 

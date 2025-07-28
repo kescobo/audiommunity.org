@@ -737,6 +737,97 @@ audio {
 }
 
 /* ==================================================================
+    Tag Cloud Styling
+================================================================== */
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin: 2rem 0;
+  line-height: 1.4;
+}
+
+.tag-cloud-item {
+  display: inline-flex;
+  align-items: baseline;
+  transition: all 0.2s ease;
+}
+
+.tag-cloud-item:hover {
+  transform: translateY(-2px);
+}
+
+.tag-cloud-item a {
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  color: var(--accent-primary);
+}
+
+.tag-cloud-item:hover a {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.tag-count {
+  color: var(--text-secondary);
+  font-size: 0.8em;
+  font-weight: 400;
+  margin-left: 0.25rem;
+}
+
+/* Tag size classes based on frequency */
+.tag-size-1 {
+  font-size: 0.85rem;
+}
+
+.tag-size-2 {
+  font-size: 1rem;
+}
+
+.tag-size-3 {
+  font-size: 1.25rem;
+}
+
+.tag-size-4 {
+  font-size: 1.5rem;
+}
+
+.tag-size-5 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .tag-cloud {
+    gap: 0.75rem 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .tag-size-1 {
+    font-size: 0.8rem;
+  }
+  
+  .tag-size-2 {
+    font-size: 0.9rem;
+  }
+  
+  .tag-size-3 {
+    font-size: 1.1rem;
+  }
+  
+  .tag-size-4 {
+    font-size: 1.3rem;
+  }
+  
+  .tag-size-5 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ==================================================================
     YouTube Embed Styling
 ================================================================== */
 

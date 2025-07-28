@@ -14,9 +14,8 @@ rss_pubdate = date
 rss_enclosure = "https://archive.org/download/audiommunity_episode038/audiommunity_episode038.mp3"
 episode_length = "84389955"
 itunes_duration = "4608"
+youtube = "https://youtu.be/sLGl52drT-o"
 +++
-
-You can now find and subscribe to us [on youtube!](https://youtube.com/@audiommunity)
 
 In this episode, we're talking about a strange phenomenon where the immune system
 seems to intentionally shuttle certain microbes from the gut to lymph nodes and the spleen.

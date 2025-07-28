@@ -10,6 +10,7 @@ Think vaccines aren't important?
 Kate, Kevin, and Matt discuss a paper modeling just how wrong you are - 
 that is, unless you don't mind children dying.
 """
+youtube = "https://youtu.be/UwEO-ejbTfM"
 rss_title = title
 rss_pubdate = date
 rss_enclosure = "https://archive.org/download/audiommunity_episode042/audiommunity_episode042.mp3"

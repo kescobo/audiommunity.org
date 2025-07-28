@@ -14,9 +14,8 @@ rss_enclosure = "https://archive.org/download/audiommunity_episode037/audiommuni
 rss_pubdate = date
 episode_length = "78568275"
 itunes_duration = "4910"
+youtube = "https://youtu.be/0kV1F_kbgec"
 +++
-
-You can now find and subscribe to us [on youtube!](https://youtube.com/@audiommunity)
 
 In this episode, we're talking about the OAS-RNaseL virus-sensing pathway,
 and the passage of its product, 2,5-oligoadenylate, through gap junctions.

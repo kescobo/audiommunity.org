@@ -13,9 +13,8 @@ rss_pubdate = date
 rss_enclosure = "https://archive.org/download/audiommunity_episode040/audiommunity_episode040.mp3"
 episode_length = "80556099"
 itunes_duration = "3763"
+youtube = "https://youtu.be/V2NsYhgj8T4"
 +++
-
-You can now find and subscribe to us [on youtube!](https://youtube.com/@audiommunity)
 
 In this episode, Matt and Kevin discuss an excellent paper
 showing how skin-regulatory Tregs have a distinct role in
