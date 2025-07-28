@@ -79,6 +79,85 @@ function get_episodes(tag::String, basepath::String)
     end
     return posts
 end
+#---
+
+function hfun_list_people()
+    return string(
+        node("div", class="cards-row",
+        (
+        node("div", class="card-column",
+            node("div", class="card-body", 
+                node("img", src=p.portrait),
+                node("div", class="card-container", 
+                    node("h2", node("a", href=p.href, p.name)),
+                    node("div", class="card-title", p.title),
+                    node("div", class="card-content", p.content),
+                    node("p", node("a", href=p.href,
+                            node("button", class="card-button", "Details")
+                           )
+                    )
+                )
+            )
+           ) for p in get_people()
+        )...
+        )
+    )
+end
+
+function person_info(rp)
+    # Read the markdown file and extract content after frontmatter
+    content = ""
+    if isfile(rp)
+        file_content = read(rp, String)
+        # Split by frontmatter delimiters (+++...+++)
+        parts = split(file_content, "+++")
+        if length(parts) >= 3
+            # Content is after the second +++
+            content = strip(parts[3])
+        end
+    end
+    
+    return (;
+    name=getvarfrom(:name, rp),
+    title=getvarfrom(:title, rp),
+    portrait=getvarfrom(:portrait, rp, "/assets/portrait_placeholder.png"),
+    href="/$(splitext(rp)[1])",
+    tags=get_page_tags(rp),
+    content=content
+    )
+end
+
+function get_people(basepath::String="about")
+    # find all valid "people/xxx.md" files, exclude the index which is where
+    # the people list gets placed
+    paths = String[]
+    for (root, dirs, files) in walkdir(basepath)
+        filter!(p -> endswith(p, ".md") && p != "index.md", files)
+        append!(paths, joinpath.(root, files))
+    end
+    # for each of those people, get their info
+    posts = [person_info(rp) for rp in paths]
+    return posts
+end
+
+function hfun_person_header()
+    person = person_info(get_rpath())
+    return string(node("div", class="franklin-content", 
+
+        node("div", class="profile-header",
+            node("div", class="profile-info",
+                node("h1", class="profile-name", person.name),
+                node("div", class="profile-title", person.title),
+            ),
+            node("div", class="profile-image-container",
+                 node("img", class="profile-image", src=person.portrait, alt="$(person.name)")
+            )
+        ),
+
+    ))
+end
+
+
 
 #---
 
