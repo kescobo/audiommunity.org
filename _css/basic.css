@@ -737,6 +737,59 @@ audio {
 }
 
 /* ==================================================================
+    YouTube Embed Styling
+================================================================== */
+
+.youtube-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  margin: 2rem 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.youtube-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.youtube-placeholder {
+  background-color: #f8fafc;
+  border: 1px dashed var(--border-color);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.youtube-placeholder p {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .youtube-container {
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+  }
+  
+  .youtube-placeholder {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+  }
+}
+
+/* ==================================================================
     About Cards Styling
 ================================================================== */
 

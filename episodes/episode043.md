@@ -16,6 +16,7 @@ rss_pubdate = date
 rss_enclosure = "https://archive.org/download/audiommunity_episode043/audiommunity_episode043.mp3"
 episode_length = "96387507"
 itunes_duration = "4584"
+youtube = "https://www.youtube.com/watch?v=st_g9eloJOw"
 +++
 
 We now have an email address! Send your questions and comments to
