@@ -3,6 +3,8 @@ using Dates
 name="Kate Franz, PhD"
 title="Senior Scientist"
 portrait="/assets/kate_headshot.jpg"
+linkedin="kate-franz"
+bluesky="katefranz.bsky.social"
 +++
 
 Kate is an immunologist with over seven years of industry experience.

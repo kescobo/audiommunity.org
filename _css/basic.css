@@ -813,9 +813,55 @@ audio {
   color: var(--accent-primary);
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.card-social {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 1.25rem;
+  background-color: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-link:hover {
+  background-color: #f3f4f6;
+}
+
+.social-link .fa-linkedin {
+  color: #0077b5;
+}
+
+.social-link:hover .fa-linkedin {
+  color: #005885;
+}
+
+.social-link .fa-bluesky {
+  color: #00bcd4;
+}
+
+.social-link:hover .fa-bluesky {
+  color: #0097a7;
 }
 
 .card-content {

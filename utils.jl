@@ -91,11 +91,19 @@ function hfun_list_people()
                 node("div", class="card-container", 
                     node("h2", node("a", href=p.href, p.name)),
                     node("div", class="card-title", p.title),
-                    node("div", class="card-content", p.content),
-                    node("p", node("a", href=p.href,
-                            node("button", class="card-button", "Details")
-                           )
-                    )
+                    node("div", class="card-social",
+                        (!isempty(p.linkedin) ? node("a", href="https://linkedin.com/in/$(p.linkedin)", target="_blank", class="social-link",
+                            node("i", class="fab fa-linkedin", "")
+                        ) : ""),
+                        (!isempty(p.bluesky) ? node("a", href="https://bsky.app/profile/$(p.bluesky)", target="_blank", class="social-link",
+                            node("i", class="fa-brands fa-bluesky", "")
+                        ) : "")
+                    ),
+                    node("div", class="card-content", p.content)
+                    # node("p", node("a", href=p.href,
+                    #         node("button", class="card-button", "Details")
+                    #        )
+                    # )
                 )
             )
            ) for p in get_people()
@@ -123,7 +131,9 @@ function person_info(rp)
     portrait=getvarfrom(:portrait, rp, "/assets/portrait_placeholder.png"),
     href="/$(splitext(rp)[1])",
     tags=get_page_tags(rp),
-    content=content
+    content=content,
+    linkedin=getvarfrom(:linkedin, rp, ""),
+    bluesky=getvarfrom(:bluesky, rp, "")
     )
 end
 
