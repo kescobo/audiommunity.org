@@ -146,6 +146,34 @@ function hfun_example()
 end
 ```
 
+### Code Organization and Reusability
+
+The `utils.jl` file is organized into logical sections to maintain clean, reusable code:
+
+- **Shared Utility Functions**: Core helpers used across multiple functions
+- **Tag System Functions**: Tag display and management
+- **Episode Management Functions**: All episode-related functionality  
+- **Media Embedding Functions**: Audio and YouTube embedding
+- **People/About Page Functions**: Profile and about page features
+- **RSS/Feed Utility Functions**: Feed generation helpers
+
+#### Avoiding Code Duplication
+
+**ALWAYS** check for existing utility functions before creating new ones. Common patterns that should be reused:
+
+- **Date formatting**: Use `format_date_display(date)` instead of inline `Dates.format()`
+- **Duration formatting**: Use `format_duration_from_seconds(duration_str)` for time display
+- **YouTube processing**: Use `extract_youtube_video_id()` and `create_youtube_embed_node()`
+- **File operations**: Use `collect_markdown_files()` and `extract_markdown_content()`
+- **Episode paths**: Use `get_episode_file_path(number)` for consistent file naming
+
+#### Before Adding New Functions
+
+1. Check if similar functionality already exists in utility functions
+2. If adding episode or people-related functionality, use existing `get_episodes()` or `get_people()` functions
+3. Extract reusable logic into shared utility functions rather than duplicating code
+4. Add comprehensive docstrings with proper Julia type annotations (`::Type` not `-> Type`)
+
 ### Code Formatting
 
 - Do not add spaces on blank lines within functions
@@ -156,5 +184,5 @@ end
 
 - Use `getlvar()` and `getvarfrom()` for accessing page/episode metadata
 - Use `get_episodes()` function for retrieving episode lists
-- Format dates with `Dates.format(date, "U d, yyyy")`
+- Format dates with `format_date_display(date)` helper function
 - Use CSS classes that match existing patterns in `_css/basic.css`
