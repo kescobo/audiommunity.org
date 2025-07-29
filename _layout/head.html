@@ -10,6 +10,24 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
   <link rel="icon" href="/assets/favicon.png">
   {{isdef title}} <title>{{fill title}}</title>  {{end}}
+  
+  <!-- Open Graph meta tags for link previews -->
+  {{isdef title}} <meta property="og:title" content="{{fill title}}"> {{end}}
+  {{isdef rss_descr}} <meta property="og:description" content="{{fill rss_descr}}"> {{end}}
+  <meta property="og:type" content="{{isdef episode}}article{{else}}website{{end}}">
+  <meta property="og:url" content="https://audiommunity.org{{fd_url}}">
+  <meta property="og:site_name" content="Audiommunity">
+  <meta property="og:image" content="https://audiommunity.org/assets/favicon.png">
+  
+  <!-- Twitter Card meta tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@audiommunity">
+  {{isdef title}} <meta name="twitter:title" content="{{fill title}}"> {{end}}
+  {{isdef rss_descr}} <meta name="twitter:description" content="{{fill rss_descr}}"> {{end}}
+  <meta name="twitter:image" content="https://audiommunity.org/assets/favicon.png">
+  
+  <!-- YouTube video embed for social previews -->
+  {{isdef youtube}} {{youtube_meta_tags}} {{end}}
 </head>
 <body>
   {{insert header.html}}

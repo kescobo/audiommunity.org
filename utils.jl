@@ -521,6 +521,40 @@ function hfun_embed_youtube()
     return string(create_youtube_embed_node(video_id))
 end
 
+"""
+    hfun_youtube_meta_tags()::String
+
+Generate additional Open Graph meta tags for YouTube video previews.
+This adds video-specific meta tags when a YouTube URL is present.
+"""
+function hfun_youtube_meta_tags()
+    youtube_url = getlvar(:youtube, "")
+    
+    if isempty(youtube_url)
+        return ""
+    end
+    
+    video_id = extract_youtube_video_id(youtube_url)
+    
+    if isempty(video_id)
+        return ""
+    end
+    
+    return string(
+        node("meta", property="og:video:url", content="https://www.youtube.com/embed/$video_id"),
+        node("meta", property="og:video:secure_url", content="https://www.youtube.com/embed/$video_id"),
+        node("meta", property="og:video:type", content="text/html"),
+        node("meta", property="og:video:width", content="1280"),
+        node("meta", property="og:video:height", content="720"),
+        node("meta", property="og:image", content="https://img.youtube.com/vi/$video_id/maxresdefault.jpg"),
+        node("meta", name="twitter:card", content="player"),
+        node("meta", name="twitter:player", content="https://www.youtube.com/embed/$video_id"),
+        node("meta", name="twitter:player:width", content="1280"),
+        node("meta", name="twitter:player:height", content="720"),
+        node("meta", name="twitter:image", content="https://img.youtube.com/vi/$video_id/maxresdefault.jpg")
+    )
+end
+
 # ===============================================
 # PEOPLE/ABOUT PAGE FUNCTIONS
 # ===============================================
