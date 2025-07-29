@@ -152,6 +152,29 @@ function hfun_example()
         duration = 0
     end
 end</code></pre>
+<h3 id="code_organization_and_reusability" ><a href="#code_organization_and_reusability"> Code Organization and Reusability</a></h3><p>The <code>utils.jl</code> file is organized into logical sections to maintain clean, reusable code:</p>
+<ul>
+<li><strong>Shared Utility Functions</strong>: Core helpers used across multiple functions</li>
+<li><strong>Tag System Functions</strong>: Tag display and management</li>
+<li><strong>Episode Management Functions</strong>: All episode-related functionality  </li>
+<li><strong>Media Embedding Functions</strong>: Audio and YouTube embedding</li>
+<li><strong>People/About Page Functions</strong>: Profile and about page features</li>
+<li><strong>RSS/Feed Utility Functions</strong>: Feed generation helpers</li>
+</ul>
+<h4 id="avoiding_code_duplication" ><a href="#avoiding_code_duplication"> Avoiding Code Duplication</a></h4><p><strong>ALWAYS</strong> check for existing utility functions before creating new ones. Common patterns that should be reused:</p>
+<ul>
+<li><strong>Date formatting</strong>: Use <code>format_date_display(date)</code> instead of inline <code>Dates.format()</code></li>
+<li><strong>Duration formatting</strong>: Use <code>format_duration_from_seconds(duration_str)</code> for time display</li>
+<li><strong>YouTube processing</strong>: Use <code>extract_youtube_video_id()</code> and <code>create_youtube_embed_node()</code></li>
+<li><strong>File operations</strong>: Use <code>collect_markdown_files()</code> and <code>extract_markdown_content()</code></li>
+<li><strong>Episode paths</strong>: Use <code>get_episode_file_path(number)</code> for consistent file naming</li>
+</ul>
+<h4 id="before_adding_new_functions" ><a href="#before_adding_new_functions"> Before Adding New Functions</a></h4><ol>
+<li>Check if similar functionality already exists in utility functions</li>
+<li>If adding episode or people-related functionality, use existing <code>get_episodes()</code> or <code>get_people()</code> functions</li>
+<li>Extract reusable logic into shared utility functions rather than duplicating code</li>
+<li>Add comprehensive docstrings with proper Julia type annotations (<code>::Type</code> not <code>-&gt; Type</code>)</li>
+</ol>
 <h3 id="code_formatting" ><a href="#code_formatting"> Code Formatting</a></h3><ul>
 <li>Do not add spaces on blank lines within functions</li>
 <li>Keep function structure clean and consistent</li>
@@ -160,7 +183,7 @@ end</code></pre>
 <h3 id="common_patterns" ><a href="#common_patterns"> Common Patterns</a></h3><ul>
 <li>Use <code>getlvar()</code> and <code>getvarfrom()</code> for accessing page/episode metadata</li>
 <li>Use <code>get_episodes()</code> function for retrieving episode lists</li>
-<li>Format dates with <code>Dates.format(date, &quot;U d, yyyy&quot;)</code></li>
+<li>Format dates with <code>format_date_display(date)</code> helper function</li>
 <li>Use CSS classes that match existing patterns in <code>_css/basic.css</code></li>
 </ul>
 
