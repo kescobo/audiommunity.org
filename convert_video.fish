@@ -1,4 +1,6 @@
 #!/usr/bin/env fish
+#
+# ln -s ~/Repos/audiommunity.org/convert_video.fish ~/.local/bin/vid2aud
 
 set video_file $argv[1]
 
