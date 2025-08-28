@@ -13,7 +13,7 @@
     </title>
     <link>http://audiommunity.org/</link>
     <language>en</language>
-    <atom:link href="http://audiommunity.org/tags/politics/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="http://audiommunity.org/tags/nanobodies/feed.xml" rel="self" type="application/rss+xml"/>
     <description>
       <![CDATA[A podcast about our bodies' never-ending fight with the outside world]]>
     </description>
@@ -48,25 +48,5 @@ Por que no los dos?
     <atom:name>Audiommunity.org</atom:name>
   </atom:author>
     <enclosure url="https://archive.org/download/audiommunity_episode045/audiommunity_episode045.mp3" length="98734251" type="audio/mpeg" />
-</item>
-
-<item>
-  <title>
-    <![CDATA[Sense of adventure]]>
-  </title>
-    <link>http://audiommunity.org/episodes/episode041/index.html</link>
-    <guid isPermaLink="false">episodes/episode041/index.html</guid>
-    <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
-  <description>
-    <![CDATA[  Matt and Kevin speak with Abbie Smith,
-an assistant professor at Emory's Hope Clinic,
-about the current state of American biomedical science.
-  ]]>
-  </description>
-  <itunes:duration>4004</itunes:duration>
-  <atom:author>
-    <atom:name>Audiommunity.org</atom:name>
-  </atom:author>
-    <enclosure url="https://archive.org/download/audiommunity_episode041/audiommunity_episode041.mp3" length="78948147" type="audio/mpeg" />
 </item>
 </channel></rss>
