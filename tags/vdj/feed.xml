@@ -13,7 +13,7 @@
     </title>
     <link>http://audiommunity.org/</link>
     <language>en</language>
-    <atom:link href="http://audiommunity.org/tags/b_cells/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="http://audiommunity.org/tags/vdj/feed.xml" rel="self" type="application/rss+xml"/>
     <description>
       <![CDATA[A podcast about our bodies' never-ending fight with the outside world]]>
     </description>
@@ -51,23 +51,5 @@ in the adaptive immune system.
     <atom:name>Audiommunity.org</atom:name>
   </atom:author>
     <enclosure url="https://archive.org/download/audiommunity_episode046/audiommunity_episode046.mp3" length="72629211" type="audio/mpeg" />
-</item>
-
-<item>
-  <title>
-    <![CDATA[Mice touching grass]]>
-  </title>
-    <link>http://audiommunity.org/episodes/episode036/index.html</link>
-    <guid isPermaLink="false">episodes/episode036/index.html</guid>
-    <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-  <description>
-    <![CDATA[  How does "rewilding" mice change their immune system? Also, an interview with an organizer of the Atlanta Stand Up for Science march!
-  ]]>
-  </description>
-  <itunes:duration>7626</itunes:duration>
-  <atom:author>
-    <atom:name>Audiommunity.org</atom:name>
-  </atom:author>
-    <enclosure url="https://archive.org/download/audiommunity_episode036/audiommunity_episode036.mp3" length="122020563" type="audio/mpeg" />
 </item>
 </channel></rss>
