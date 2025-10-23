@@ -1,6 +1,6 @@
 +++
 using Dates
-title = "If you're a hammer"
+title = "When you're a hammer"
 season = 2
 episode = 47
 date = DateTime(2025, 10, 23, 13, 0, 0)
