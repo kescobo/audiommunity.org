@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:georss="http://www.georss.org/georss"
+  xmlns:podcast="https://podcastindex.org/namespace/1.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>
+      <![CDATA[Audiommunity]]>
+    </title>
+    <link>http://audiommunity.org/</link>
+    <language>en</language>
+    <atom:link href="http://audiommunity.org/tags/sle/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>
+      <![CDATA[A podcast about our bodies' never-ending fight with the outside world]]>
+    </description>
+    <itunes:image href="http://audiommunity.org/assets/audiommunity_cover.png"/>
+    <itunes:category text="Science &amp; Medicine"/>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:author>Audiommunity.org</itunes:author>
+    <itunes:owner>
+        <itunes:name>Audiommunity</itunes:name>
+        <itunes:email>podcast@bonham.ch</itunes:email>
+    </itunes:owner>
+    <podcast:guid>389e74b1-be77-567e-b7b8-98eacec29284</podcast:guid>
+    <podcast:locked>no</podcast:locked>
+    <podcast:funding url="https://patreon.com/audiommunity">Support the show</podcast:funding>
+
+<item>
+  <title>
+    <![CDATA[If you're a hammer]]>
+  </title>
+    <link>http://audiommunity.org/episodes/episode047/index.html</link>
+    <guid isPermaLink="false">episodes/episode047/index.html</guid>
+    <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
+  <description>
+    <![CDATA[  In this episode, Matt and Kevin talk about glycoRNAs and inflammation,
+but Matt insists that it's really about Lupus
+  ]]>
+  </description>
+  <itunes:duration>3598</itunes:duration>
+  <atom:author>
+    <atom:name>Audiommunity.org</atom:name>
+  </atom:author>
+    <enclosure url="https://archive.org/download/audiommunity_episode047/audiommunity_episode047.mp3" length="74245371" type="audio/mpeg" />
+</item>
+</channel></rss>
