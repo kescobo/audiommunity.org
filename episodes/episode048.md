@@ -23,6 +23,8 @@ we're talking neonatal Tregs!
 rss_title = title
 rss_pubdate = date
 rss_enclosure = "https://archive.org/download/audiommunity_episode048/audiommunity_episode048.mp3"
+episode_length = "86813907"
+itunes_duration = "4647"
 youtube = "https://youtu.be/aVHT3i5MPIE"
 +++
 
