@@ -15,8 +15,10 @@ rss_descr = """
 """
 rss_title = title
 rss_pubdate = date
-rss_enclosure = "https://archive.org/download/audiommunity_episode049/audiommunity_episode049.mp3"
 youtube = ""
+rss_enclosure = "https://archive.org/download/audiommunity_episode049/audiommunity_episode049.mp3"
+episode_length = "83403507"
+itunes_duration = "4231"
 +++
 
 In this episode, Matt and Kevin are joined by [Nicole Ackermans](https://nicoleackermans.com)
@@ -36,5 +38,5 @@ about gladiatorial sports like football.
 - [The Paper - A history of thought on headbutting animals]()
 - Ologies episode with Joy Reidenberg: https://www.alieward.com/ologies/functional-morphology
 - Ologies episode with Nicole: https://www.alieward.com/ologies/headbutts
-- [The birds aren't real]()
+- [The birds aren't real](https://en.wikipedia.org/wiki/Birds_Aren't_Real)
 - [The actual ratio of microbes to human cells](https://pmc.ncbi.nlm.nih.gov/articles/PMC4991899/)
