@@ -3,7 +3,7 @@ using Dates
 title = "Scatch that itchy worm in your head"
 season = 2
 episode = 49
-date = DateTime(2025, 11, 20, 13, 0, 0)
+date = DateTime(2025, 11, 19, 13, 0, 0)
 tags = [
     "headbutting",
     "anatomy",
