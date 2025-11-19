@@ -15,7 +15,7 @@ rss_descr = """
 """
 rss_title = title
 rss_pubdate = date
-youtube = ""
+youtube = "https://youtu.be/y32pOGgK6u0"
 rss_enclosure = "https://archive.org/download/audiommunity_episode049/audiommunity_episode049.mp3"
 episode_length = "83403507"
 itunes_duration = "4231"
