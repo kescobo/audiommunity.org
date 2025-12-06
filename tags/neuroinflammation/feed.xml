@@ -28,4 +28,27 @@
     <podcast:guid>389e74b1-be77-567e-b7b8-98eacec29284</podcast:guid>
     <podcast:locked>no</podcast:locked>
     <podcast:funding url="https://patreon.com/audiommunity">Support the show</podcast:funding>
+
+<item>
+  <title>
+    <![CDATA[Scatch that itchy worm in your head]]>
+  </title>
+    <link>http://audiommunity.org/episodes/episode049/index.html</link>
+    <guid isPermaLink="false">episodes/episode049/index.html</guid>
+    <pubDate>Wed, 19 Nov 2025 00:00:00 +0000</pubDate>
+  <description>
+    <![CDATA[  In this episode, Matt and Kevin are joined by [Nicole Ackermans](https://nicoleackermans.com)
+to discuss her recent review paper tracing human thoughts about headbutting
+from 10,000 BCE to the present day.
+How are animals like bighorn sheep and woodpeckers protected
+from brain injury?
+Actually, wait... **are** they protected from brain injury?
+  ]]>
+  </description>
+  <itunes:duration>4231</itunes:duration>
+  <atom:author>
+    <atom:name>Audiommunity.org</atom:name>
+  </atom:author>
+    <enclosure url="https://archive.org/download/audiommunity_episode049/audiommunity_episode049.mp3" length="83403507" type="audio/mpeg" />
+</item>
 </channel></rss>
