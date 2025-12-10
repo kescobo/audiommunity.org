@@ -80,19 +80,29 @@ end
 
 # PCA
 
-fig = Figure(;size=(600,200));
+fig = Figure(;size=(600,500));
 ax1 = Axis(fig[1,1]; xlabel = "PC.1", ylabel="PC.2", title="all proteins")
-ax2 = Axis(fig[1,2]; xlabel = "PC.1", ylabel="PC.2", title="top MI count")
+ax2 = Axis(fig[1,2]; xlabel = "PC.1", ylabel="PC.2", title="top 200 MI count")
+ax3 = Axis(fig[2,1]; xlabel = "PC.1", ylabel="PC.2", title="top 100 MI count")
+ax4 = Axis(fig[2,2]; xlabel = "PC.1", ylabel="PC.2", title="top 25 MI count")
 
 pca = fit(PCA, Matrix(df[:, 4:end]));
-scatter!(ax1, projection(pca)[:,1], projection(pca)[:,2]; color = df.apoe4cnt)
+
+plt = scatter!(ax1, projection(pca)[:,1], projection(pca)[:,2]; color = df.apoe4cnt)
 
 let us = sort(proteins, "mi_cnt"; rev=true)
     pca = fit(PCA, Matrix(select(df, unique(us.uniprot[1:200]))))
     scatter!(ax2, projection(pca)[:,1], projection(pca)[:,2]; color = df.apoe4cnt)
+    pca = fit(PCA, Matrix(select(df, unique(us.uniprot[1:100]))))
+    scatter!(ax3, projection(pca)[:,1], projection(pca)[:,2]; color = df.apoe4cnt)
+    pca = fit(PCA, Matrix(select(df, unique(us.uniprot[1:25]))))
+    scatter!(ax4, projection(pca)[:,1], projection(pca)[:,2]; color = df.apoe4cnt)
 end
 
+Colorbar(fig[:,3], plt; label="E4 count")
+save("pcas.png", fig)
 fig
+
 
 # Add more correlation
 df2 = copy(df)
@@ -123,9 +133,11 @@ save("mi_add_distributions.png", fig)
 fig
 
 
-fig = Figure(;size=(400,200));
+fig = Figure(;size=(600,500));
 ax1 = Axis(fig[1,1]; xlabel = "PC.1", ylabel="PC.2", title="all proteins")
-ax2 = Axis(fig[1,2]; xlabel = "PC.1", ylabel="PC.2", title="top MI count")
+ax2 = Axis(fig[1,2]; xlabel = "PC.1", ylabel="PC.2", title="top 200 MI count")
+ax3 = Axis(fig[2,1]; xlabel = "PC.1", ylabel="PC.2", title="top 100 MI count")
+ax4 = Axis(fig[2,2]; xlabel = "PC.1", ylabel="PC.2", title="top 25 MI count")
 
 pca = fit(PCA, Matrix(df2[:, 4:end]));
 scatter!(ax1, projection(pca)[:,1], projection(pca)[:,2]; color = df.apoe4cnt)
@@ -133,9 +145,16 @@ scatter!(ax1, projection(pca)[:,1], projection(pca)[:,2]; color = df.apoe4cnt)
 let us = sort(proteins, "mi_cnt2"; rev=true)
     pca = fit(PCA, Matrix(select(df2, unique(us.uniprot[1:200]))))
     scatter!(ax2, projection(pca)[:,1], projection(pca)[:,2]; color = df.apoe4cnt)
+    pca = fit(PCA, Matrix(select(df2, unique(us.uniprot[1:100]))))
+    scatter!(ax3, projection(pca)[:,1], projection(pca)[:,2]; color = df.apoe4cnt)
+    pca = fit(PCA, Matrix(select(df2, unique(us.uniprot[1:25]))))
+    scatter!(ax4, projection(pca)[:,1], projection(pca)[:,2]; color = df.apoe4cnt)
 end
 
+Colorbar(fig[:,3], plt; label="E4 count")
+save("pcas_add.png", fig)
 fig
+
 
 open("cnt2_uniprot.txt", "w") do io
     us = sort(proteins, "mi_cnt"; rev=true)
