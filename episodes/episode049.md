@@ -41,7 +41,7 @@ about gladiatorial sports like football.
 
 ## Links
 
-- [The Paper - A history of thought on headbutting animals]()
+- [The Paper - A history of thought on headbutting animals](https://doi.org/10.1002/ar.70069)
 - Ologies episode with Joy Reidenberg: <https://www.alieward.com/ologies/functional-morphology>
 - Ologies episode with Nicole: <https://www.alieward.com/ologies/headbutts>
 - [The birds aren't real](https://en.wikipedia.org/wiki/Birds_Aren't_Real)
