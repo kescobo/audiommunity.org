@@ -234,6 +234,45 @@ Usage: convert_video.jl VIDEO_FILE [MARKDOWN_FILE]
     #     return 1
     # end
 
+    # Upload to YouTube (requires youtube-upload tool and OAuth setup)
+    # Setup:
+    #   1. pip install --upgrade youtube-upload
+    #   2. Create OAuth 2.0 credentials at https://console.cloud.google.com/
+    #   3. Enable YouTube Data API v3
+    #   4. Download client_secrets.json
+    #   5. First run: youtube-upload --client-secrets=client_secrets.json test.mp4
+    #      (creates request.token for future automated uploads)
+    # Note: Unverified projects can only upload as "unlisted" or "private"
+    #
+    # @info "Uploading to YouTube" video_file
+    # yt_args = ["--client-secrets", "client_secrets.json"]
+    #
+    # if !isempty(metadata.ia_title)
+    #     push!(yt_args, "--title", metadata.ia_title)
+    # end
+    #
+    # if !isempty(metadata.description)
+    #     push!(yt_args, "--description", metadata.description)
+    # end
+    #
+    # if !isempty(metadata.ia_tags)
+    #     # YouTube uses comma-separated tags, archive.org uses semicolons
+    #     yt_tags = replace(metadata.ia_tags, ';' => ',')
+    #     push!(yt_args, "--tags", yt_tags)
+    # end
+    #
+    # push!(yt_args, "--category", "Education")
+    # push!(yt_args, "--privacy", "unlisted")  # or "public" once verified
+    # push!(yt_args, video_file)
+    #
+    # yt_result = run(`youtube-upload $yt_args`, wait=false)
+    # wait(yt_result)
+    #
+    # if !success(yt_result)
+    #     @error "YouTube upload failed"
+    #     return 1
+    # end
+
     # Update markdown file with RSS metadata
     if !isempty(md_file)
         update_markdown_with_rss(md_file, base_name, output_file, filesize, duration)

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:georss="http://www.georss.org/georss"
+  xmlns:podcast="https://podcastindex.org/namespace/1.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>
+      <![CDATA[Audiommunity]]>
+    </title>
+    <link>http://audiommunity.org/</link>
+    <language>en</language>
+    <atom:link href="http://audiommunity.org/tags/protein_folding/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>
+      <![CDATA[A podcast about our bodies' never-ending fight with the outside world]]>
+    </description>
+    <itunes:image href="http://audiommunity.org/assets/audiommunity_cover.png"/>
+    <itunes:category text="Science &amp; Medicine"/>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:author>Audiommunity.org</itunes:author>
+    <itunes:owner>
+        <itunes:name>Audiommunity</itunes:name>
+        <itunes:email>podcast@bonham.ch</itunes:email>
+    </itunes:owner>
+    <podcast:guid>389e74b1-be77-567e-b7b8-98eacec29284</podcast:guid>
+    <podcast:locked>no</podcast:locked>
+    <podcast:funding url="https://patreon.com/audiommunity">Support the show</podcast:funding>
+
+<item>
+  <title>
+    <![CDATA[Kevin has learned a tautology]]>
+  </title>
+    <link>http://audiommunity.org/episodes/episode050/index.html</link>
+    <guid isPermaLink="false">episodes/episode050/index.html</guid>
+    <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
+  <description>
+    <![CDATA[  In this episode, Matt and Kevin stick with the brain,
+this time looking at the immunological implications of
+a variant of a gene called Apolipoprotein E
+that has been linked to Alzheimer's and other neurodegenerative diseases.
+It's a long one, and we get snarky in this one folks!
+Buckle up!
+  ]]>
+  </description>
+  <itunes:duration>7496</itunes:duration>
+  <atom:author>
+    <atom:name>Audiommunity.org</atom:name>
+  </atom:author>
+    <enclosure url="https://archive.org/download/audiommunity_episode050/audiommunity_episode050.mp3" length="160600563" type="audio/mpeg" />
+</item>
+</channel></rss>

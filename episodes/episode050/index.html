@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <link rel="stylesheet" href="/css/franklin.css">
+  <link rel="stylesheet" href="/css/basic.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <link rel="icon" href="/assets/favicon.png">
+   <title>Kevin has learned a tautology</title>  
+  
+  
+   <meta property="og:title" content="Kevin has learned a tautology"> 
+   <meta property="og:description" content="In this episode, Matt and Kevin stick with the brain, this time looking at the immunological implications of a variant of a gene called Apolipoprotein E that has been linked to Alzheimer's and other neurodegenerative diseases.  It's a long one, and we get snarky in this one folks! Buckle up!"> 
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://audiommunity.orgepisodes/episode050/index.html">
+  <meta property="og:site_name" content="Audiommunity">
+  <meta property="og:image" content="https://audiommunity.org/assets/favicon.png">
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@audiommunity">
+   <meta name="twitter:title" content="Kevin has learned a tautology"> 
+   <meta name="twitter:description" content="In this episode, Matt and Kevin stick with the brain, this time looking at the immunological implications of a variant of a gene called Apolipoprotein E that has been linked to Alzheimer's and other neurodegenerative diseases.  It's a long one, and we get snarky in this one folks! Buckle up!"> 
+  <meta name="twitter:image" content="https://audiommunity.org/assets/favicon.png">
+  
+  
+   <meta property="og:video:url" content="https://www.youtube.com/embed/FSEVhQByxyg" /><meta property="og:video:secure_url" content="https://www.youtube.com/embed/FSEVhQByxyg" /><meta property="og:video:type" content="text/html" /><meta property="og:video:width" content="1280" /><meta property="og:video:height" content="720" /><meta property="og:image" content="https://img.youtube.com/vi/FSEVhQByxyg/maxresdefault.jpg" /><meta name="twitter:card" content="player" /><meta name="twitter:player" content="https://www.youtube.com/embed/FSEVhQByxyg" /><meta name="twitter:player:width" content="1280" /><meta name="twitter:player:height" content="720" /><meta name="twitter:image" content="https://img.youtube.com/vi/FSEVhQByxyg/maxresdefault.jpg" /> 
+</head>
+<body>
+  <header>
+<div class="blog-name"><a href="/"><img src="/assets/audiommunity_banner.png" width="100%" id="banner"></a></div>
+
+<nav>
+  <ul>
+    <li><a href="/episodes/">Episodes</a></li>
+    <li><a href="https://patreon.com/audiommunity">Support Us!</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/feed"><img src="/assets/Rss-feed.svg" width="20px"></a></li>
+  </ul>
+  <img src="/assets/hamburger.svg" id="menu-icon">
+</nav>
+</header>
+
+<div class="franklin-content">
+
+    
+        <h1>Episode 50 - Kevin has learned a tautology</h1>
+        <div class="episode-metadata"><div class="metadata-item"><span class="metadata-label">Published: </span><span class="metadata-value">December 10, 2025</span></div><div class="metadata-item"><span class="metadata-label">Duration: </span><span class="metadata-value">2:04:56</span></div><div class="metadata-item"><span class="metadata-label">Topics: </span><div class="metadata-tags"><span class="tag"><a href="/tags/neuroinflammation/">neuroinflammation</a></span><span class="tag"><a href="/tags/prions/">prions</a></span><span class="tag"><a href="/tags/apoe/">APOE</a></span><span class="tag"><a href="/tags/protein_folding/">protein folding</a></span><span class="tag"><a href="/tags/statistics/">statistics</a></span><span class="tag"><a href="/tags/alzheimers/">alzheimers</a></span><span class="tag"><a href="/tags/microglia/">microglia</a></span></div></div></div>
+        
+<p>
+<audio controls preload="metadata">
+    <source src="https://archive.org/download/audiommunity_episode050/audiommunity_episode050.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+</p>
+
+        <div class="youtube-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" src="https://www.youtube.com/embed/FSEVhQByxyg" title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="true"></iframe></div>
+    
+
+</div>
+
+
+
+<div class="franklin-content" >
+  <p>In this episode, Matt and Kevin stick with the brain,
+this time looking at the immunological implications of
+a variant of a gene called Apolipoprotein E
+that has been linked to Alzheimer's and other neurodegenerative diseases.</p>
+<p>It's a long one, and we get snarky in this one folks!
+Buckle up!</p>
+<h3 id="creating_random_vectors" ><a href="#creating_random_vectors"> Creating random vectors</a></h3><p>In this episode, we spend a fair amount of time
+talking about the statistical implications of these methods,
+and Kevin says things like</p>
+<blockquote><p>if I generated a bunch of random vectors,
+we would still see the same thing.</p>
+</blockquote><p>But is that really true? Kevin wrote some code to find out!
+You can find the link to the actual code below if that's your jam,
+but to give a brief summary, Kevin</p>
+<ol>
+<li>Generated a dataset with approximately the same proportion
+   of APOE genotypes and neurodegeneration pattern as the authors have in table S1</li>
+<li>Generated a bunch of random values drawn from a normal distribution
+   to match the number of proteins found in the SomaScan screen</li>
+<li>Performed a mutual information screen and PCA as described in the paper</li>
+<li>Generated a couple of random lists of proteins to test the GSEA
+   analysis described in the paper.</li>
+</ol>
+<p>Here's what he saw:</p>
+<img src="%22/apoe/pcas.png%22"><p>So it's not <em>literally</em> true that completely random data
+will segregate based on this analysis - mea culpa.
+But if you add even a tiny bit of underlying correlation structure
+(some directional noise on 1% of samples),
+we see the following:</p>
+<img src="%22/apoe/pcas.png%22"><p>Which is much closer to what it looks like in the paper.
+We discuss these results and the code
+at around minute 68, and the link to the code is below.</p>
+<h2 id="links" ><a href="#links"> Links</a></h2><ul>
+<li><a href="https://doi.org/10.1038/s41591-025-03835-z">The Paper - APOE ε4 carriers share immune-related proteomic changes across neurodegenerative diseases</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Prion">Wikipedia on prion disease</a></li>
+<li><a href="https://github.com/kescobo/audiommunity.org/tree/main/apoe">Code to replicate Kevin's random number generation</a></li>
+</ul>
+
+  <div class="page-foot">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Audiommunity.org. Last modified: December 12, 2025.
+    Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+</div>
+
+</div>
+
+    
+    
+  </body>
+</html>
