@@ -24,7 +24,7 @@ Buckle up!
 """
 rss_title = title
 rss_pubdate = date
-youtube = "https://youtu.be/FSEVhQByxyg"
+youtube = "https://youtu.be/iuXVD340XRM"
 rss_enclosure = "https://archive.org/download/audiommunity_episode050/audiommunity_episode050.mp3"
 episode_length = "160600563"
 itunes_duration = "7496"
