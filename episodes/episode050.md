@@ -61,7 +61,7 @@ but to give a brief summary, Kevin
 
 Here's what he saw:
 
-![]("/apoe/pcas.png")
+![]("/assets/pcas.png")
 
 So it's not *literally* true that completely random data
 will segregate based on this analysis - mea culpa.
@@ -69,7 +69,7 @@ But if you add even a tiny bit of underlying correlation structure
 (some directional noise on 1% of samples),
 we see the following:
 
-![]("/apoe/pcas.png")
+![]("/assets/pcas_add.png")
 
 Which is much closer to what it looks like in the paper.
 We discuss these results and the code
