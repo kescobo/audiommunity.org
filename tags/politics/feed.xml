@@ -31,6 +31,25 @@
 
 <item>
   <title>
+    <![CDATA[F is for Flume]]>
+  </title>
+    <link>http://audiommunity.org/episodes/episode051/index.html</link>
+    <guid isPermaLink="false">episodes/episode051/index.html</guid>
+    <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+  <description>
+    <![CDATA[  A retrospective on audiommunity, and some solid rants about the importance of science,
+science communication, and government funding.
+  ]]>
+  </description>
+  <itunes:duration>3174</itunes:duration>
+  <atom:author>
+    <atom:name>Audiommunity.org</atom:name>
+  </atom:author>
+    <enclosure url="https://archive.org/download/audiommunity_episode051/audiommunity_episode051.mp3" length="66606123" type="audio/mpeg" />
+</item>
+
+<item>
+  <title>
     <![CDATA[Big if true]]>
   </title>
     <link>http://audiommunity.org/episodes/episode045/index.html</link>

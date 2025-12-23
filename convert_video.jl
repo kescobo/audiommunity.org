@@ -7,106 +7,66 @@ Convert video file to audio and upload to archive.org with metadata from markdow
 """
 module ConvertVideo
 
+export main
+
 using Logging
+using Markdown
+
+function file_parts(md_file)
+    lines = readlines(md_file)
+    mdfences = findall(line-> line == "+++", lines)
+    (first(mdfences) == 1 && length(mdfences) == 2) || error("Malformed metadata")
+    f2 = last(mdfences)
+    metadata = lines[2:f2-1]
+    rest = lines[f2+1:end]
+    return (metadata, rest)
+end
+
+function findfirst_and_get(pred, itr, default=nothing)
+    idx = findfirst(pred, itr)
+    isnothing(idx) ? (nothing, default) : (idx, itr[idx])
+end
 
 """
 Extract metadata from episode markdown file.
 
 Returns a named tuple with description, ia_title, ia_date, and ia_tags.
 """
-function extract_markdown_metadata(md_file::String)
-    if !isfile(md_file)
-        @warn "Markdown file not found" md_file
-        return (description="", ia_title="", ia_date="", ia_tags="")
-    end
-
-    md_content = read(md_file, String)
-    lines = split(md_content, '\n')
-
-    # Extract description (everything after closing +++)
-    plus_count = 0
-    description_lines = String[]
-    for line in lines
-        if line == "+++"
-            plus_count += 1
-            continue
-        end
-        if plus_count >= 2
-            push!(description_lines, line)
-        end
-    end
-    description = join(description_lines, '\n')
+function extract_markdown_metadata(md_file)
+    # description = html-formatted "rest"
+    metadata,rest = file_parts(md_file)
 
     # Extract title and episode number
-    title_line = ""
-    episode_num = ""
-    for line in lines
-        if startswith(line, "title = ")
-            title_match = match(r"title = \"(.*)\"", line)
-            if title_match !== nothing
-                title_line = title_match.captures[1]
-            end
-        elseif startswith(line, "episode = ")
-            episode_match = match(r"episode = (.*)", line)
-            if episode_match !== nothing
-                episode_num = episode_match.captures[1]
-            end
-        end
-    end
+    _, title_line = findfirst_and_get(line-> startswith(line, r"title ?="), metadata)
+    title = replace(title_line, r"title ?= ?\"(.+)\"" => s"\1") 
 
-    ia_title = ""
-    if !isempty(title_line) && !isempty(episode_num)
-        ia_title = "Audiommunity episode $episode_num - $title_line"
-    end
+    _, episode_line = findfirst_and_get(line-> startswith(line, r"episode ?="), metadata)
+    episode = parse(Int, replace(episode_line, r"episode ?= ?(.+)" => s"\1"))
+    
+    ia_title = "Audiommunity episode $episode - $title_line"
 
     # Extract date
-    ia_date = ""
-    for line in lines
-        if startswith(line, "date = DateTime")
-            date_match = match(r".*\((\d{4}), (\d+), (\d+).*", line)
-            if date_match !== nothing
-                year, month, day = date_match.captures
-                ia_date = "$year-$month-$day"
-            end
-        end
-    end
+    date = ""
+    _, date_line = findfirst_and_get(line-> startswith(line, r"date ?="), metadata)
+    date_match = match(r".*\((\d{4}), ?(\d+), ?(\d+).*", date_line)
+    year, month, day = date_match.captures
+    ia_date = "$year-$month-$day"
 
     # Extract tags
-    in_tags = false
     tag_list = String[]
-    for line in lines
-        if startswith(line, "tags = [")
-            in_tags = true
-            if contains(line, "]")
-                in_tags = false
-                tag_match = match(r"tags = \[(.*)\]", line)
-                if tag_match !== nothing
-                    tags_str = tag_match.captures[1]
-                    for tag in split(tags_str, ',')
-                        tag_cleaned = strip(tag)
-                        tag_quoted = match(r"\"(.*)\"", tag_cleaned)
-                        if tag_quoted !== nothing
-                            push!(tag_list, tag_quoted.captures[1])
-                        end
-                    end
-                end
-            end
-            continue
-        end
-
-        if in_tags
-            if startswith(line, "]")
-                in_tags = false
-                continue
-            end
-            tag_match = match(r"\"(.*)\"", line)
-            if tag_match !== nothing
-                push!(tag_list, tag_match.captures[1])
-            end
+    tagst, tagline = findfirst_and_get(line->startswith(line, r"tags ?= ?\["), metadata)
+    tagend = findfirst(line-> contains(line, "]"), metadata[tagst:end]) + tagst - 1
+    for line in metadata[tagst:tagend]
+        tags = split(line, r"[,\"]")
+        tags = strip.(replace.(tags, "tags ="=> "", r"[^\w ]"=>""))
+        for tag in replace.(tags, "tags ="=> "", r"[^\w ]"=>"")
+            !isempty(tag) && push!(tag_list, tag)
         end
     end
-
     ia_tags = !isempty(tag_list) ? join(tag_list, ';') : ""
+
+    description = html(Markdown.parse(join(rest, "\n")))
+
 
     return (description=description, ia_title=ia_title, ia_date=ia_date, ia_tags=ia_tags)
 end
@@ -114,45 +74,28 @@ end
 """
 Update markdown file with RSS metadata (enclosure URL, file size, duration).
 """
-function update_markdown_with_rss(md_file::String, base_name::String, output_file::String, filesize::Int, duration::Int)
-    if !isfile(md_file)
-        return
-    end
-
+function update_markdown_with_rss(md_file::String, episode_num::Int, filesize::Int, duration::Int)
     @info "Updating markdown file with RSS metadata"
-
-    lines = readlines(md_file)
-
-    enclosure = "https://archive.org/download/$base_name/$output_file"
+    metadata, rest = file_parts(md_file)
+    eppath = "audiommunity_episode$(lpad(episode_num, 3, '0'))"
+    enclosure = "https://archive.org/download/$eppath/$eppath.mp3"
     plus_count = 0
-    new_lines = String[]
 
-    for line in lines
-        if line == "+++"
-            plus_count += 1
-            if plus_count == 1
-                push!(new_lines, line)
-            elseif plus_count == 2
-                push!(new_lines, "rss_enclosure = \"$enclosure\"")
-                push!(new_lines, "episode_length = \"$filesize\"")
-                push!(new_lines, "itunes_duration = \"$duration\"")
-                push!(new_lines, line)
-            end
-        else
-            push!(new_lines, line)
-        end
+    if !any(line-> startswith(line, "rss_enclosure"), metadata)
+        push!(metadata, "rss_enclosure = \"$enclosure\"")
+    end
+    if !any(line-> startswith(line, "episode_length"), metadata)
+        push!(metadata, "episode_length = \"$filesize\"")
+    end
+    if !any(line-> startswith(line, "itunes_duration"), metadata)
+        push!(metadata, "itunes_duration = \"$duration\"")
     end
 
-    write(md_file, join(new_lines, '\n'))
+    write(md_file, join(["+++"; metadata; "+++"; rest], '\n'))
     @info "Markdown file updated successfully"
 end
 
-"""
-Main entry point for video to audio conversion and upload.
-
-Usage: convert_video.jl VIDEO_FILE [MARKDOWN_FILE]
-"""
-@main function main(args)
+function (@main)(args)
     # Parse arguments
     video_file = length(args) >= 1 ? args[1] : ""
     md_file = length(args) >= 2 ? args[2] : ""
@@ -171,6 +114,7 @@ Usage: convert_video.jl VIDEO_FILE [MARKDOWN_FILE]
     # Get base name without extension
     base_name = splitext(basename(video_file))[1]
     output_file = "$base_name.mp3"
+    epnum = parse(Int, match(r"(\d+)", base_name)[1])
 
     # Convert video to audio using ffmpeg
     @info "Converting video to audio" video_file output_file
@@ -191,10 +135,7 @@ Usage: convert_video.jl VIDEO_FILE [MARKDOWN_FILE]
     duration = round(Int, parse(Float64, strip(duration_output)))
 
     # Extract metadata from markdown file if provided
-    metadata = (description="", ia_title="", ia_date="", ia_tags="")
-    if !isempty(md_file)
-        metadata = extract_markdown_metadata(md_file)
-    end
+    metadata = extract_markdown_metadata(md_file)
 
     # Upload to archive.org
     @info "Uploading to archive.org" ia_identifier=base_name
@@ -205,29 +146,17 @@ Usage: convert_video.jl VIDEO_FILE [MARKDOWN_FILE]
         "--metadata=mediatype:audio",
         "--metadata=creator:Audiommunity",
         "--metadata=language:eng",
-        "--metadata=licenseurl:https://creativecommons.org/licenses/by/4.0/"
+        "--metadata=licenseurl:https://creativecommons.org/licenses/by/4.0/",
+        "--metadata=title:$(metadata.ia_title)",
+        "--metadata=description:$(metadata.description)",
+        "--metadata=date:$(metadata.ia_date)",
+        "--metadata=subject:$(metadata.ia_tags)",
     ]
-
-    if !isempty(metadata.ia_title)
-        push!(metadata_args, "--metadata=title:$(metadata.ia_title)")
-    end
-
-    if !isempty(metadata.description)
-        push!(metadata_args, "--metadata=description:$(metadata.description)")
-    end
-
-    if !isempty(metadata.ia_date)
-        push!(metadata_args, "--metadata=date:$(metadata.ia_date)")
-    end
-
-    if !isempty(metadata.ia_tags)
-        push!(metadata_args, "--metadata=subject:$(metadata.ia_tags)")
-    end
-
     # For now, just echo the command (uncomment to actually upload)
-    @info "Upload command" ia_identifier output_file metadata=join(metadata_args, " ")
-    # ia_result = run(`ia upload $ia_identifier $output_file $metadata_args`, wait=false)
-    # wait(ia_result)
+    cmd = Cmd([["ia", "upload", ia_identifier, output_file]; metadata_args])
+    @info cmd
+
+    # ia_result = run(cmd)
     #
     # if !success(ia_result)
     #     @error "Upload failed"
@@ -275,7 +204,7 @@ Usage: convert_video.jl VIDEO_FILE [MARKDOWN_FILE]
 
     # Update markdown file with RSS metadata
     if !isempty(md_file)
-        update_markdown_with_rss(md_file, base_name, output_file, filesize, duration)
+        update_markdown_with_rss(md_file, epnum, filesize, duration)
     end
 
     @info "Conversion and upload complete"
