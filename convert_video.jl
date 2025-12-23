@@ -80,20 +80,18 @@ function update_markdown_with_rss(md_file::String, episode_num::Int, filesize::I
     eppath = "audiommunity_episode$(lpad(episode_num, 3, '0'))"
     enclosure = "https://archive.org/download/$eppath/$eppath.mp3"
     plus_count = 0
-    new_lines = String[]
 
-
-    if !any(line-> startswith(line, "rss_enclosure", metadata))
+    if !any(line-> startswith(line, "rss_enclosure"), metadata)
         push!(metadata, "rss_enclosure = \"$enclosure\"")
     end
-    if !any(line-> startswith(line, "episode_length", metadata))
+    if !any(line-> startswith(line, "episode_length"), metadata)
         push!(metadata, "episode_length = \"$filesize\"")
     end
-    if !any(line-> startswith(line, "itunes_duration", metadata))
+    if !any(line-> startswith(line, "itunes_duration"), metadata)
         push!(metadata, "itunes_duration = \"$duration\"")
     end
 
-    write(md_file, join(["+++"; metadata; "+++"; new_lines], '\n'))
+    write(md_file, join(["+++"; metadata; "+++"; rest], '\n'))
     @info "Markdown file updated successfully"
 end
 

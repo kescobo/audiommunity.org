@@ -3,7 +3,7 @@ using Dates
 title = "F is for Flume"
 season = 2
 episode = 50
-date = DateTime(2025, 12, 19, 12, 0, 0)
+date = DateTime(2025, 12, 22, 12, 0, 0)
 tags = [
     "meta",
     "politics",
@@ -15,7 +15,10 @@ science communication, and government funding.
 """
 rss_title = title
 rss_pubdate = date
-youtube = ""
+youtube = "https://youtu.be/zK4pph2fZnI"
+rss_enclosure = "https://archive.org/download/audiommunity_episode051/audiommunity_episode051.mp3"
+episode_length = "66606123"
+itunes_duration = "3174"
 +++
 
 In this episode, Matt and Kevin look back and look ahead.
